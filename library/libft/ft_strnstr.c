@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/19 14:22:22 by tmongell          #+#    #+#             */
-/*   Updated: 2022/04/20 20:46:44 by tmongell         ###   ########.fr       */
+/*   Created: 2021/11/01 16:11:40 by tmongell          #+#    #+#             */
+/*   Updated: 2021/11/01 17:16:59 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int ac, char **av)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	t_stack	*stack_A;
-	t_stack	*stack_B;
-	if (ac < 2)
-		return(0);
-	stack_A = read_args(ac, av);
-	stack_B = malloc(sizeof (t_stack));
-	printf("%d element in stack\n", show_stack(stack_A));//debug
-	if(check_double(stack_A))
-		error("found duplicates values");
-	
+	size_t	i;
+	size_t	len_needle;
 
+	len_needle = ft_strlen(needle);
+	if (*needle == '\0')
+		return ((char *)haystack);
+	i = 0;
+	while (haystack[i] && i < len && len_needle <= (len - i))
+	{
+		if (!ft_strncmp(haystack + i, needle, len_needle))
+			return ((char *)(haystack + i));
+		i ++;
+	}
+	return (NULL);
 }

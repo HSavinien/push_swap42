@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/19 14:22:22 by tmongell          #+#    #+#             */
-/*   Updated: 2022/04/20 20:46:44 by tmongell         ###   ########.fr       */
+/*   Created: 2021/11/08 15:33:07 by tmongell          #+#    #+#             */
+/*   Updated: 2021/11/09 14:08:12 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include <stdlib.h>
+#include "libft.h"
 
-int	main(int ac, char **av)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	t_stack	*stack_A;
-	t_stack	*stack_B;
-	if (ac < 2)
-		return(0);
-	stack_A = read_args(ac, av);
-	stack_B = malloc(sizeof (t_stack));
-	printf("%d element in stack\n", show_stack(stack_A));//debug
-	if(check_double(stack_A))
-		error("found duplicates values");
-	
+	int		i;
+	char	*new_str;
 
+	new_str = malloc(sizeof (char) * (ft_strlen(s) + 1));
+	if (new_str == NULL)
+		return (NULL);
+	i = 0;
+	while (s[i])
+	{
+		new_str[i] = f(i, s[i]);
+		i ++;
+	}
+	new_str[i] = '\0';
+	return (new_str);
 }

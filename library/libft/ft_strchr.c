@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/19 14:22:22 by tmongell          #+#    #+#             */
-/*   Updated: 2022/04/20 20:46:44 by tmongell         ###   ########.fr       */
+/*   Created: 2021/10/30 18:14:42 by tmongell          #+#    #+#             */
+/*   Updated: 2021/11/16 17:42:42 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int ac, char **av)
+char	*ft_strchr(const char *s, int c)
 {
-	t_stack	*stack_A;
-	t_stack	*stack_B;
-	if (ac < 2)
-		return(0);
-	stack_A = read_args(ac, av);
-	stack_B = malloc(sizeof (t_stack));
-	printf("%d element in stack\n", show_stack(stack_A));//debug
-	if(check_double(stack_A))
-		error("found duplicates values");
-	
+	int		i;
 
+	if (c < 0 || c > 127)
+		return (NULL);
+	if (c == '\0')
+		return ((char *)(s + ft_strlen(s)));
+	i = 0;
+	while (s[i])
+	{
+		if (s[i] == c)
+			return ((char *)(s + i));
+		i ++;
+	}
+	return (NULL);
 }

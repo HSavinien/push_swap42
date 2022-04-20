@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/19 14:22:22 by tmongell          #+#    #+#             */
-/*   Updated: 2022/04/20 20:46:44 by tmongell         ###   ########.fr       */
+/*   Created: 2021/10/28 13:20:05 by tmongell          #+#    #+#             */
+/*   Updated: 2021/11/15 19:41:56 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int ac, char **av)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	t_stack	*stack_A;
-	t_stack	*stack_B;
-	if (ac < 2)
-		return(0);
-	stack_A = read_args(ac, av);
-	stack_B = malloc(sizeof (t_stack));
-	printf("%d element in stack\n", show_stack(stack_A));//debug
-	if(check_double(stack_A))
-		error("found duplicates values");
-	
+	size_t	i;
+	size_t	j;
+	size_t	first_size;
 
+	j = 0;
+	first_size = ft_strlen(dst);
+	i = first_size;
+	while (src[j] && i < dstsize - 1 && dstsize > 0)
+	{
+		dst[i] = src[j];
+		j++;
+		i++;
+	}
+	dst[i] = '\0';
+	i --;
+	if (dstsize > first_size)
+		return (ft_strlen(src) + first_size);
+	else
+		return (ft_strlen(src) + dstsize);
 }

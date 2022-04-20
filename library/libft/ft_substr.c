@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/19 14:22:22 by tmongell          #+#    #+#             */
-/*   Updated: 2022/04/20 20:46:44 by tmongell         ###   ########.fr       */
+/*   Created: 2021/11/02 15:38:35 by tmongell          #+#    #+#             */
+/*   Updated: 2021/11/16 17:12:32 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
+#include <stdlib.h>
 
-int	main(int ac, char **av)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	t_stack	*stack_A;
-	t_stack	*stack_B;
-	if (ac < 2)
-		return(0);
-	stack_A = read_args(ac, av);
-	stack_B = malloc(sizeof (t_stack));
-	printf("%d element in stack\n", show_stack(stack_A));//debug
-	if(check_double(stack_A))
-		error("found duplicates values");
-	
+	char	*new_str;
 
+	if (start >= ft_strlen(s))
+		return (ft_calloc(1, sizeof(char)));
+	if (ft_strlen(s + start) < len)
+		len = ft_strlen(s + start);
+	new_str = malloc(len + 1);
+	if (new_str == NULL)
+		return (NULL);
+	ft_strlcpy(new_str, s + start, len + 1);
+	return (new_str);
 }
