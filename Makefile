@@ -1,4 +1,8 @@
 SRCS	=	push_swap.c \
+			debug.c \
+			exit.c \
+			parsing.c \
+			general_utils.c \
 
 OBJS	=	${SRCS:%.c=%.o}
 
@@ -6,7 +10,7 @@ CC		=	gcc
 
 CFLAGS	=	-Wall -Wextra -Werror
 
-LIB		=	-L./library/printf -lftprintf
+LIB		=	-L./library/printf -lftprintf -L./library/libft -lft
 
 NAME	=	push_swap
 
@@ -18,11 +22,15 @@ ${NAME}:	${OBJS}	library
 	@${CC} ${CFLAGS} ${LIB} ${OBJS} -o ${NAME}
 	@echo "code compiled succesfully"
 
-library:	printf
+library:	printf libft
 
 printf:
 	@make -s -C ./library/printf
 	@echo "printf compiled"
+
+libft:
+	@make -s -C ./library/libft
+	@echo "libft compiled"
 
 clean:
 	@rm -f ${OBJS}
@@ -36,4 +44,7 @@ fclean:		clean
 
 re:		fclean all
 
-.PHONY:		all clean fclean re
+debug: library
+	${CC} ${CFLAGS} ${LIB} ${SRCS} -g -fsanitize=address -o ${NAME}
+
+.PHONY:		all clean fclean re debug
