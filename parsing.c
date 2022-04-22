@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 18:37:17 by tmongell          #+#    #+#             */
-/*   Updated: 2022/04/22 21:45:03 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/04/22 21:59:37 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ t_stack	*build_stack_b(size_t len)
 	stack_b = NULL;
 	while (len --)
 	{
-		stack_b = stack_add_front(stack_b, "0");
+		stack_b = stack_add_front(stack_b, 0);
 	}
 	return (stack_b);
 }

@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 17:31:09 by tmongell          #+#    #+#             */
-/*   Updated: 2022/04/22 20:00:54 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/04/22 21:59:13 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,10 @@ int	show_stack(t_stack *stack)
 	i = 0;
 	while (stack)
 	{
-		printf("%d | ", stack->content);
+		if (stack->content)
+			printf("%d | ", *stack->content);
+		else
+			printf("(null) | ");
 		stack = stack->next;
 		i ++;
 	}

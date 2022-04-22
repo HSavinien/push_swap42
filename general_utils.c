@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 21:01:58 by tmongell          #+#    #+#             */
-/*   Updated: 2022/04/22 20:53:35 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/04/22 21:57:57 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,16 @@
 t_stack	*stack_add_front(t_stack *stack, char *content)
 {
 	t_stack	*new;
+	int		val;
 
 	new = malloc(sizeof(t_stack));
-	new->content = ft_atoi(content);
+	if (!content)
+		new->content = NULL;
+	else
+	{
+		val = ft_atoi(content);
+		new->content = memcpy(malloc(sizeof(int)), &val, sizeof(int));
+	}
 	new->next = stack;
 	return (new);
 }

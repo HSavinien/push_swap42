@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 16:53:06 by tmongell          #+#    #+#             */
-/*   Updated: 2022/04/22 21:17:40 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/04/22 21:48:10 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 //structures    --------------------------------------------------    structures
 
 typedef struct s_stack {
-	int				content;
+	int				*content;
 	struct s_stack	*next;
 }t_stack;
 
