@@ -33,7 +33,7 @@ libft:
 	@echo "libft compiled"
 
 clean:
-	@rm -f ${OBJS}
+	@rm -rf ${OBJS} ${NAME}.dSYM
 	@make -s -C ./library/printf clean
 	@echo "object files removed"
 

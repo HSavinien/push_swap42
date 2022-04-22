@@ -6,13 +6,13 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 17:22:49 by tmongell          #+#    #+#             */
-/*   Updated: 2022/04/20 18:28:40 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/04/22 20:13:27 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int error(char *msg)
+int	error(char *msg)
 {
 	ft_printf("Error : %s\n", msg);
 	exit(0);

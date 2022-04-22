@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 14:22:22 by tmongell          #+#    #+#             */
-/*   Updated: 2022/04/21 17:19:53 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/04/22 21:19:54 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,14 @@
 
 int	main(int ac, char **av)
 {
-	t_stack	*stack_A;
-	t_stack	*stack_B;
-	if (ac < 2)
-		return(0);
-	stack_A = read_args(ac, av);
-	stack_B = malloc(sizeof (t_stack));
-	printf("%d element in stack\n", show_stack(stack_A));//debug
+	t_stack	*stack_a;
+	t_stack	*stack_b = NULL;
 
+	if (ac < 2)
+		return (0);
+	stack_a = read_args(ac, av);
+	stack_b = build_stack_b(get_stack_len(stack_a));
+	show_stack(stack_a);//debug
+	show_stack(stack_b);//debug
+	//do_sorting(stack_a, stack_b);
 }
