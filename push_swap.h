@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 16:53:06 by tmongell          #+#    #+#             */
-/*   Updated: 2022/04/22 21:48:10 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/04/25 16:49:39 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <stdio.h>//============================================================DEBUG
 # include "library/libft/libft.h"
 # include "library/printf/lib_printf.h"
+
 
 //structures    --------------------------------------------------    structures
 
@@ -37,6 +38,7 @@ t_stack	*build_stack_b(size_t len);
 
 t_stack	*stack_add_front(t_stack *stack, char *content);
 size_t	get_stack_len(t_stack *s);
+int		is_stack_sorted(t_stack *stack);
 
 //sorting general    ----------------------------------------    sorting general
 
@@ -49,4 +51,5 @@ int		error(char *msg);
 //debug    ------------------------------------------------------------    debug
 
 int		show_stack(t_stack *stack);
+
 #endif

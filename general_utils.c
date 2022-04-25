@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 21:01:58 by tmongell          #+#    #+#             */
-/*   Updated: 2022/04/22 21:57:57 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/04/25 17:02:56 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,26 @@ size_t	get_stack_len(t_stack *s)
 		i ++;
 	}
 	return (i);
+}
+
+void	ft_swap(int *a, int *b)
+{
+	*a = *a + *b;
+	*a = *a - *b;
+	*b = *a - *b;
+}
+
+int	is_stack_sorted(t_stack *stack)
+{
+	int	nb;
+	nb = *stack->content;
+	stack = stack->next;
+	while (stack && stack->content)
+	{
+		if (*stack->content < nb)
+			return (0);
+		nb = *stack->content;
+		stack = stack->next;
+	}
+	return (1);
 }
