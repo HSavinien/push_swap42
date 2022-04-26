@@ -6,12 +6,13 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 21:01:58 by tmongell          #+#    #+#             */
-/*   Updated: 2022/04/25 17:02:56 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/04/25 20:09:56 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/*
 t_stack	*stack_add_front(t_stack *stack, char *content)
 {
 	t_stack	*new;
@@ -48,6 +49,7 @@ void	ft_swap(int *a, int *b)
 	*a = *a - *b;
 	*b = *a - *b;
 }
+*///======================================================================== rm that
 
 int	is_stack_sorted(t_stack *stack)
 {

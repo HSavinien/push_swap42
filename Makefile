@@ -3,6 +3,7 @@ SRCS	=	push_swap.c \
 			exit.c \
 			parsing.c \
 			general_utils.c \
+			stack_utils.c \
 
 OBJS	=	${SRCS:%.c=%.o}
 
@@ -35,11 +36,13 @@ libft:
 clean:
 	@rm -rf ${OBJS} ${NAME}.dSYM
 	@make -s -C ./library/printf clean
+	@make -s -C ./library/libft clean
 	@echo "object files removed"
 
 fclean:		clean
 	@rm -f ${NAME}
 	@make -s -C ./library/printf fclean
+	@make -s -C ./library/libft fclean
 	@echo "${NAME} file removed"
 
 re:		fclean all

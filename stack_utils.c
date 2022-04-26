@@ -1,27 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/19 14:22:22 by tmongell          #+#    #+#             */
-/*   Updated: 2022/04/25 19:34:56 by tmongell         ###   ########.fr       */
+/*   Created: 2022/04/23 17:58:27 by tmongell          #+#    #+#             */
+/*   Updated: 2022/04/25 20:41:51 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int ac, char **av)
+t_stack	*stack_add_front(t_stack *stack, int *content)
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b = NULL;
+	t_stack	*new;
 
-	if (ac < 2)
-		return (0);
-	stack_a = read_args(ac, av);
-	stack_b = build_stack_b(get_stack_len(stack_a));
-	show_stack(stack_a);//debug
-	printf("%d\n", is_stack_sorted(stack_a));//debug
-	//do_sorting(stack_a, stack_b);
+	new = malloc(sizeof(t_stack));
+	if (!new)
+		error("unplaned malloc error");
+	if (!content)
+		new->content = NULL;
+	else
+		new->content = content;
+	new->next = stack;
+	return (new);
+}
+
+size_t	get_stack_len(t_stack *s)
+{
+	int i;
+
+	i = 0;
+	while(s)
+	{
+		s = s->next;
+		i ++;
+	}
+	return (i);
 }

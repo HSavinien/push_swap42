@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 17:33:02 by tmongell          #+#    #+#             */
-/*   Updated: 2021/11/11 14:19:31 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/04/25 19:39:45 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@ static int	ft_isspace(char c)
 		return (0);
 }
 
-int	ft_atoi(const char *str)
+long int	ft_atoi(const char *str)
 {
-	int	i;
-	int	nb;
-	int	sign;
+	int			i;
+	long int	nb;
+	int			sign;
 
 	nb = 0;
 	sign = 1;
