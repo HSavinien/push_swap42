@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 16:53:06 by tmongell          #+#    #+#             */
-/*   Updated: 2022/04/25 19:59:11 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/04/29 18:28:58 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 # define PUSH_SWAP_H
 # include <stdlib.h>
 #include <stdio.h>//============================================================DEBUG
+
 # include "library/libft/libft.h"
 # include "library/printf/lib_printf.h"
-
+# include "sorting/sorting.h"
+# include "moves/moves.h"
 
 //structures    --------------------------------------------------    structures
 
