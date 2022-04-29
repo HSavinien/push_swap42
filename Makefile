@@ -40,7 +40,7 @@ clean:
 	@echo "object files removed"
 
 fclean:		clean
-	@rm -f ${NAME}
+	@rm -f ${NAME} generator
 	@make -s -C ./library/printf fclean
 	@make -s -C ./library/libft fclean
 	@echo "${NAME} file removed"
@@ -49,5 +49,8 @@ re:		fclean all
 
 debug: library
 	${CC} ${CFLAGS} ${LIB} ${SRCS} -g -fsanitize=address -o ${NAME}
+
+generator:
+	${CC} ${CFLAGS} -o generator nb_generator/generator.c
 
 .PHONY:		all clean fclean re debug
