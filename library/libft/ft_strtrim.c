@@ -6,12 +6,11 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 17:06:31 by tmongell          #+#    #+#             */
-/*   Updated: 2021/11/11 14:20:47 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/04/29 19:16:19 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 static int	ft_is_in_str(char c, const char *str)
 {

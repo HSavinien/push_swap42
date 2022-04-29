@@ -6,12 +6,11 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 13:36:04 by tmongell          #+#    #+#             */
-/*   Updated: 2021/11/11 14:21:58 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/04/29 19:14:29 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 static size_t	ft_nblen(int nb)
 {

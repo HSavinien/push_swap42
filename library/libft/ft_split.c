@@ -6,12 +6,11 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 12:54:11 by tmongell          #+#    #+#             */
-/*   Updated: 2021/11/11 17:21:43 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/04/29 19:15:41 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 // function that give the number of substring in the original string to split
 static int	ft_count_str(char const *s, char c)
