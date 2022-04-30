@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/29 20:19:32 by tmongell          #+#    #+#             */
-/*   Updated: 2022/04/29 22:06:58 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/04/30 17:26:25 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,6 @@ int	main(int ac, char **av)
 	printf("\nis %d duplicated : %d\n",tab[0], is_duplicated(tab[0], tab, 99));
 }
 */
-
 int	main(int ac, char **av)
 {
 	int	len;
@@ -93,9 +92,9 @@ int	main(int ac, char **av)
 	sranddev();
 	while (len)
 	{
-		gen[len - 1] = (rand() % max) + min;
+		gen[len - 1] = (rand() % (max - min)) + min;
 		while (is_duplicated(gen[len - 1], gen, max + 1))
-			gen[len - 1] = ((gen[len - 1] + 1) % max) + min;
+			gen[len - 1] = ((gen[len - 1] + 1) % (max - min)) + min;
 		printf("%d ", gen[len - 1]);
 		len --;
 	}

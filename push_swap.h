@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 16:53:06 by tmongell          #+#    #+#             */
-/*   Updated: 2022/04/29 18:28:58 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/04/30 19:19:01 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,23 @@
 
 # include "library/libft/libft.h"
 # include "library/printf/lib_printf.h"
-# include "sorting/sorting.h"
-# include "moves/moves.h"
+//# include "sorting/sorting.h"
+//# include "moves/moves.h"
 
-//structures    --------------------------------------------------    structures
+//structures    ==================================================    structures
 
 typedef struct s_stack {
 	int				*content;
 	struct s_stack	*next;
-}t_stack;
+}	t_stack;
+
+typedef struct s_lss {
+	int		len;
+	int		pos_num;
+	int		first_val;
+	int		last_val;
+	t_stack	*pos;
+}	t_lss;
 
 //functions    ====================================================    functions
 
@@ -44,7 +52,7 @@ int		is_stack_sorted(t_stack *stack);
 
 //sorting general    ----------------------------------------    sorting general
 
-void	do_sorting(t_stack *stack_a, t_stack *stack_b);
+void	do_sorting(t_stack *sa, t_stack *sb);
 
 //exit    --------------------------------------------------------------    exit
 
