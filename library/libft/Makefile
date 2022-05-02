@@ -40,6 +40,9 @@ SRCS	=	ft_isdigit.c \
 			ft_lstadd_back.c \
 			ft_lstdelone.c \
 			ft_reset_ptr.c \
+			ft_isspace.c \
+			ft_split_word.c \
+			ft_memdup.c \
 
 OBJS	= ${SRCS:.c=.o}
 
