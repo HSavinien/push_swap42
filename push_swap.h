@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 16:53:06 by tmongell          #+#    #+#             */
-/*   Updated: 2022/04/30 19:19:01 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/05/02 14:02:33 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,27 @@ int		is_stack_sorted(t_stack *stack);
 //sorting general    ----------------------------------------    sorting general
 
 void	do_sorting(t_stack *sa, t_stack *sb);
+
+//sorting utils    --------------------------------------------    sorting utils
+
+//movements    ----------------------------------------------------    movements
+//subject functions
+int	mv_sa(t_stack *sa, t_stack *sb);
+int	mv_sb(t_stack *sa, t_stack *sb);
+int	mv_ss(t_stack *sa, t_stack *sb);
+int	mv_pa(t_stack *sa, t_stack *sb);
+int	mv_pb(t_stack *sa, t_stack *sb);
+int	mv_ra(t_stack *sa, t_stack *sb);
+int	mv_rb(t_stack *sa, t_stack *sb);
+int	mv_rr(t_stack *sa, t_stack *sb);
+int	mv_rra(t_stack *sa, t_stack *sb);
+int	mv_rrb(t_stack *sa, t_stack *sb);
+int	mv_rrr(t_stack *sa, t_stack *sb);
+//utils
+void	do_swap(t_stack *src);
+void	do_push(t_stack *src, t_stack *dst);
+void	do_rotate(t_stack *src);
+void	do_rev_rotate(t_stack *src);
 
 //exit    --------------------------------------------------------------    exit
 

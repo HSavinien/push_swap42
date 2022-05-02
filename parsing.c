@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 18:37:17 by tmongell          #+#    #+#             */
-/*   Updated: 2022/04/25 20:42:35 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/05/02 18:53:33 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,17 +48,50 @@ int	value_in_tab(int val, int *tab)
 	return (0);
 }
 
+int		get_nb_word(char *s)
+{
+	int	i;
+	int	nb_str;
+
+	if (ft_strlen(s) == 0)
+		return (0);
+	i = 1;
+	nb_str = 1;
+	while (s[i])
+	{
+		if (ft_isspace(s[i]) && !ft_isspace(s[i - 1]))
+			nb_str ++;
+		i ++;
+	}
+	if (ft_isspace(s[i - 1]))
+		nb_str --;
+	return (nb_str);
+}
+
+char	**get_true_av(int *ac, char **av)
+{
+	if (*ac > 2)
+	{
+		-- *ac;
+		return (av + 1);
+	}
+	*ac = get_nb_word(av[1]);
+	av = ft_split_word(av[1]);
+	return (av);
+}
+
 t_stack	*read_args(int ac, char **av)
 {
 	t_stack	*element;
 	int		*seen;
 	int		*new_val;
 
+	av = get_true_av(&ac, av);
 	element = NULL;
 	seen = malloc(sizeof(int) * ac);
 	ft_bzero(seen, ac * sizeof (int));
 	ac --;
-	while (ac)
+	while (ac >= 0)
 	{
 		check_value(av[ac]);
 		if (value_in_tab(ft_atoi(av[ac]), seen))

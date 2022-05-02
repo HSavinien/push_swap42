@@ -3,4 +3,6 @@
 *.swp
 *.dSYM
 push_swap
+get_nbrs
+libft.a
 visualizer
