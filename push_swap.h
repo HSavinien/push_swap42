@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 16:53:06 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/02 19:10:36 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/05/03 23:16:13 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,16 +45,18 @@ int		value_in_tab(int val, int *tab);
 t_stack	*build_stack_b(size_t len);
 
 //utils    ------------------------------------------------------------    utils
-
+//general
 t_stack	*stack_add_front(t_stack *stack, int *content);
 size_t	get_stack_len(t_stack *s);
 int		is_stack_sorted(t_stack *stack);
+//stack
 
-//sorting general    ----------------------------------------    sorting general
 
+//sorting    --------------------------------------------------------    sorting
+//general
 void	do_sorting(t_stack *sa, t_stack *sb);
 
-//sorting utils    --------------------------------------------    sorting utils
+//utils
 
 //movements    ----------------------------------------------------    movements
 //subject functions

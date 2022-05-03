@@ -1,42 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/02 19:06:34 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/04 00:02:05 by tmongell         ###   ########.fr       */
+/*   Created: 2022/05/03 20:54:43 by tmongell          #+#    #+#             */
+/*   Updated: 2022/05/03 22:42:43 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <../push_swap.h>
 
-void	do_swap(t_stack *src)
+void	do_push(t_stack *src, t_stack *dst)
 {
-	if(get_stack_len(src) < 2)
-		return;
-	ft_swap_ptr()
-
+	
 }
 
-void	mv_sa(t_stack *sa, t_stack *sb)
+void	mv_pa(t_stack *sa, t_stack *sb)
 {
-	do_swap(sa);
-	printf("sa\n");
-	(void) *sb;
+	do_push(sa, sb);
+	ft_printf("pa\n");
 }
-
-void	mv_sb(t_stack *sa, t_stack *sb)
+void	mv_pb(t_stack *sa, t_stack *sb)
 {
-	do_swap(sa);
-	printf("sa\n");
-	(void) *sb;
-}
-
-void	mv_ss(t_stack *sa, t_stack *sb)
-{
-	do_swap(sa);
-	do_swap(sb);
-	printf("ss\n");
+	do_push(sb, sa);
+	ft_printf("pb\n");
 }

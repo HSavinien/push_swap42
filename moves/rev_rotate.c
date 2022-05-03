@@ -1,33 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   actions.c                                          :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/02 19:02:52 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/02 19:05:48 by tmongell         ###   ########.fr       */
+/*   Created: 2022/05/03 22:43:55 by tmongell          #+#    #+#             */
+/*   Updated: 2022/05/03 22:50:54 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.c"
+#include "../push_swap.h"
 
-void	do_swap(t_stack *src)
+
+void	do_rev_rotate(t_stack *src)
 {
 	
 }
 
-void	do_push(t_stack *src, t_stack *dst)
+void	mv_rra(t_stack *sa, t_stack *sb)
 {
-
+	do_rev_rotate(sa);
+	ft_printf("rra\n");
+	(void) sb;
 }
-
-void	do_rotate(t_stack *src)
+void	mv_rrb(t_stack *sa, t_stack *sb)
 {
-
+	do_rev_rotate(sb);
+	ft_printf("rrb\n");
+	(void) sa;
 }
-
-void	do_rev_rotate(t_stack *src)
+void	mv_rrr(t_stack *sa, t_stack *sb)
 {
-
+	do_rev_rotate(sa);
+	do_rev_rotate(sb);
+	ft_printf("rrr\n");
 }
