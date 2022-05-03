@@ -1,6 +1,7 @@
 .DS_store
 *.o
 *.swp
+*.swo
 *.dSYM
 push_swap
 get_nbrs
