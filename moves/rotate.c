@@ -6,22 +6,20 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 22:43:55 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/04 21:40:59 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/05/04 22:21:40 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-
 void	do_rotate(t_stack **src)
 {
-	t_stack *last;
+	t_stack	*last;
+
 	last = stack_find_last(*src);
-	
 	last->next = *src;
 	*src = (*src)->next;
 	last->next->next = NULL;
-
 }
 
 void	mv_ra(t_stack **sa, t_stack **sb)
@@ -30,12 +28,14 @@ void	mv_ra(t_stack **sa, t_stack **sb)
 	ft_printf("ra\n");
 	(void) sb;
 }
+
 void	mv_rb(t_stack **sa, t_stack **sb)
 {
 	do_rotate(sb);
 	ft_printf("rb\n");
 	(void) sa;
 }
+
 void	mv_rr(t_stack **sa, t_stack **sb)
 {
 	do_rotate(sa);

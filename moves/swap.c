@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 19:06:34 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/04 20:42:53 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/05/04 22:22:25 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,13 @@
 void	do_swap(t_stack **src)
 {
 	t_stack	*saves[3];
-	if(get_stack_len(*src) < 2)
-		return;
+
+	if (get_stack_len(*src) < 2)
+		return ;
 	saves[0] = *src;
 	saves[1] = (*src)->next;
 	saves[2] = (*src)->next->next;
-	*src=saves[1];
+	*src = saves[1];
 	saves[1]->next = saves[0];
 	saves[0]->next = saves[2];
 }
