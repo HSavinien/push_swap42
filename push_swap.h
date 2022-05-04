@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 16:53:06 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/04 20:44:00 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/05/04 21:04:17 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,9 +75,9 @@ void	mv_rrb(t_stack **sa, t_stack **sb);
 void	mv_rrr(t_stack **sa, t_stack **sb);
 //utils
 void	do_swap(t_stack **src);
-void	do_push(t_stack *src, t_stack *dst);
-void	do_rotate(t_stack *src);
-void	do_rev_rotate(t_stack *src);
+void	do_push(t_stack **src, t_stack **dst);
+void	do_rotate(t_stack **src);
+void	do_rev_rotate(t_stack **src);
 
 //exit    --------------------------------------------------------------    exit
 
