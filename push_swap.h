@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 16:53:06 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/04 21:04:17 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/05/04 21:38:15 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ void	ft_swap_ptr(void **a, void **b);
 t_stack	*stack_add_front(t_stack *stack, int *content);
 size_t	get_stack_len(t_stack *s);
 int		is_stack_sorted(t_stack *stack);
+t_stack	*stack_find_last(t_stack *s);
 
 
 //sorting    --------------------------------------------------------    sorting
