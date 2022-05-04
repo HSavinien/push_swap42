@@ -22,5 +22,5 @@ int	main(int ac, char **av)
 	sa = read_args(ac, av);
 	sb = build_stack_b(get_stack_len(sa));
 	show_stack(sa);//debug
-	//do_sorting(stack_a, stack_b);
+	(void) sb;
 }

@@ -22,9 +22,9 @@ void	ft_swap(int *a, int *b)
 void	ft_swap_ptr(void **a, void **b)
 {
 	void	*c;
-	*c = *a;
+	c = *a;
 	*a = *b;
-	*b = *c;
+	*b = c;
 }
 
 int	is_stack_sorted(t_stack *stack)

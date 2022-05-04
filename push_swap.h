@@ -46,10 +46,12 @@ t_stack	*build_stack_b(size_t len);
 
 //utils    ------------------------------------------------------------    utils
 //general
+void	ft_swap(int *a, int *b);
+void	ft_swap_ptr(void **a, void **b);
+//stack
 t_stack	*stack_add_front(t_stack *stack, int *content);
 size_t	get_stack_len(t_stack *s);
 int		is_stack_sorted(t_stack *stack);
-//stack
 
 
 //sorting    --------------------------------------------------------    sorting
