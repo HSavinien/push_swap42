@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 16:53:06 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/03 23:16:13 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/05/04 20:44:00 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,19 +62,19 @@ void	do_sorting(t_stack *sa, t_stack *sb);
 
 //movements    ----------------------------------------------------    movements
 //subject functions
-int	mv_sa(t_stack *sa, t_stack *sb);
-int	mv_sb(t_stack *sa, t_stack *sb);
-int	mv_ss(t_stack *sa, t_stack *sb);
-int	mv_pa(t_stack *sa, t_stack *sb);
-int	mv_pb(t_stack *sa, t_stack *sb);
-int	mv_ra(t_stack *sa, t_stack *sb);
-int	mv_rb(t_stack *sa, t_stack *sb);
-int	mv_rr(t_stack *sa, t_stack *sb);
-int	mv_rra(t_stack *sa, t_stack *sb);
-int	mv_rrb(t_stack *sa, t_stack *sb);
-int	mv_rrr(t_stack *sa, t_stack *sb);
+void	mv_sa(t_stack **sa, t_stack **sb);
+void	mv_sb(t_stack **sa, t_stack **sb);
+void	mv_ss(t_stack **sa, t_stack **sb);
+void	mv_pa(t_stack **sa, t_stack **sb);
+void	mv_pb(t_stack **sa, t_stack **sb);
+void	mv_ra(t_stack **sa, t_stack **sb);
+void	mv_rb(t_stack **sa, t_stack **sb);
+void	mv_rr(t_stack **sa, t_stack **sb);
+void	mv_rra(t_stack **sa, t_stack **sb);
+void	mv_rrb(t_stack **sa, t_stack **sb);
+void	mv_rrr(t_stack **sa, t_stack **sb);
 //utils
-void	do_swap(t_stack *src);
+void	do_swap(t_stack **src);
 void	do_push(t_stack *src, t_stack *dst);
 void	do_rotate(t_stack *src);
 void	do_rev_rotate(t_stack *src);

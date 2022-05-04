@@ -7,3 +7,5 @@ push_swap
 get_nbrs
 libft.a
 visualizer
+library/libft/libft.a
+library/printf/libftprintf.a
