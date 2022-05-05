@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 16:53:06 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/05 17:35:23 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/05/05 20:31:02 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ t_stack	*stack_find_last(t_stack *s);
 //sorting    --------------------------------------------------------    sorting
 //general
 void	do_sorting(t_stack *sa, t_stack *sb);
+void	sort_five(t_stack *sa, t_stack *sb);
 
 //utils
 
