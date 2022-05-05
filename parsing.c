@@ -6,21 +6,11 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 18:37:17 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/02 18:53:33 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/05/05 20:16:16 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-t_stack	*build_stack_b(size_t len)
-{
-	t_stack	*stack_b;
-
-	stack_b = NULL;
-	while (len --)
-		stack_b = stack_add_front(stack_b, 0);
-	return (stack_b);
-}
 
 void	check_value(char *content)
 {
@@ -48,7 +38,7 @@ int	value_in_tab(int val, int *tab)
 	return (0);
 }
 
-int		get_nb_word(char *s)
+int	get_nb_word(char *s)
 {
 	int	i;
 	int	nb_str;

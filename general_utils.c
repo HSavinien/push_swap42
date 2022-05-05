@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 21:01:58 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/04 21:46:20 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/05/05 20:14:52 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	ft_swap(int *a, int *b)
 void	ft_swap_ptr(void **a, void **b)
 {
 	void	*c;
+
 	c = *a;
 	*a = *b;
 	*b = c;

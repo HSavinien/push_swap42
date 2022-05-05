@@ -4,6 +4,10 @@ SRCS	=	push_swap.c \
 			parsing.c \
 			general_utils.c \
 			stack_utils.c \
+			moves/push.c \
+			moves/rev_rotate.c \
+			moves/rotate.c \
+			moves/swap.c 
 
 OBJS	=	${SRCS:%.c=%.o}
 
@@ -19,18 +23,18 @@ NAME	=	push_swap
 
 all:		${NAME}
 
-${NAME}:	${OBJS}	library
+${NAME}: ${OBJS}	library
 	@${CC} ${CFLAGS} ${LIB} ${OBJS} -o ${NAME}
 	@echo "code compiled succesfully"
 
 library:	printf libft
 
 printf:
-	@make -s -C ./library/printf
+	@make -C ./library/printf
 	@echo "printf compiled"
 
 libft:
-	@make -s -C ./library/libft
+	@make -C ./library/libft
 	@echo "libft compiled"
 
 clean:

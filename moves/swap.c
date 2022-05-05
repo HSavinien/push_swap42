@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 19:06:34 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/04 22:22:25 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/05/05 19:49:29 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ void	mv_sa(t_stack **sa, t_stack **sb)
 
 void	mv_sb(t_stack **sa, t_stack **sb)
 {
-	do_swap(sa);
-	printf("sa\n");
-	(void) *sb;
+	do_swap(sb);
+	printf("sb\n");
+	(void) *sa;
 }
 
 void	mv_ss(t_stack **sa, t_stack **sb)

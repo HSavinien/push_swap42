@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 17:58:27 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/04 22:06:38 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/05/05 20:18:53 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,10 @@ t_stack	*stack_add_front(t_stack *stack, int *content)
 
 size_t	get_stack_len(t_stack *s)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	while(s)
+	while (s)
 	{
 		s = s->next;
 		i ++;
@@ -43,6 +43,7 @@ size_t	get_stack_len(t_stack *s)
 int	is_stack_sorted(t_stack *stack)
 {
 	int	nb;
+
 	nb = *stack->content;
 	stack = stack->next;
 	while (stack && stack->content)
@@ -57,7 +58,7 @@ int	is_stack_sorted(t_stack *stack)
 
 t_stack	*stack_find_last(t_stack *s)
 {
-	while(s->next)
-		s=s->next;
+	while (s->next)
+		s = s->next;
 	return (s);
 }
