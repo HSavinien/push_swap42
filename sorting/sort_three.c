@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/29 17:24:01 by tmongell          #+#    #+#             */
-/*   Updated: 2022/04/30 16:20:41 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/05/06 18:05:50 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,3 +17,9 @@ sort_three(t_stack sa, t_stack sb)
 	int	base_order[3];
 	base_order[0] = 
 }
+
+/* pissible order : 
+ * 1 2 3
+ * 1 3 2
+ * 3 2 1
+ * 3 1 2

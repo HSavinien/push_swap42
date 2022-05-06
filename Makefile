@@ -30,11 +30,11 @@ ${NAME}: ${OBJS}	library
 library:	printf libft
 
 printf:
-	@make -C ./library/printf
+	@make -s -C ./library/printf
 	@echo "printf compiled"
 
 libft:
-	@make -C ./library/libft
+	@make -s -C ./library/libft
 	@echo "libft compiled"
 
 clean:
