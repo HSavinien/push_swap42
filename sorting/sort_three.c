@@ -6,20 +6,40 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/29 17:24:01 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/06 18:05:50 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/05/09 21:26:34 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-sort_three(t_stack sa, t_stack sb)
+t_stack	*sort_three(t_stack *sa, t_stack *sb)
 {
-	int	base_order[3];
-	base_order[0] = 
+	int	lst[3];
+
+	lst[0] = *sa->content;
+	lst[1] = *sa->next->content;
+	lst[2] = *sa->next->next->content;
+	if (lst[0]>lst[2] && lst[2] > lst[1])
+	{
+		mv_ra(&sa, &sb);
+		show_stack(sa);//debug
+		return (sa);
+	}
+	if (lst[0] > lst[1])
+	{
+		mv_sa(&sa, &sb);
+		ft_swap(&lst[0], &lst[1]);
+	}
+	if (lst[0] < lst[2] < lst[1])
+	{
+		mv_rra(&sa, &sb);
+		mv_sa(&sa, &sb);
+	}
+	else if (lst[2] < lst[0] < lst[1])
+		mv_rra(&sa, &sb);
+	else if (lst[1] < lst[2] < lst[0])
+		mv_ra(&sa, &sb);
+	show_stack(sa);//debug
+	return (sa);
 }
 
-/* pissible order : 
- * 1 2 3
- * 1 3 2
- * 3 2 1
- * 3 1 2

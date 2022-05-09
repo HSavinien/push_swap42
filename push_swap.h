@@ -6,14 +6,14 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 16:53:06 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/05 20:31:02 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/05/09 18:57:26 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 # include <stdlib.h>
-#include <stdio.h>//============================================================DEBUG
+# include <stdio.h>//===========================================================DEBUG
 
 # include "library/libft/libft.h"
 # include "library/printf/lib_printf.h"
@@ -42,7 +42,6 @@ typedef struct s_lss {
 t_stack	*read_args(int ac, char **av);
 void	check_value(char *content);
 int		value_in_tab(int val, int *tab);
-t_stack	*build_stack_b(size_t len);
 
 //utils    ------------------------------------------------------------    utils
 //general
@@ -59,6 +58,7 @@ t_stack	*stack_find_last(t_stack *s);
 //general
 void	do_sorting(t_stack *sa, t_stack *sb);
 void	sort_five(t_stack *sa, t_stack *sb);
+t_stack	*sort_three(t_stack *sa, t_stack *sb);
 
 //utils
 

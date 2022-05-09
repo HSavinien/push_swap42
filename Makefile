@@ -7,7 +7,10 @@ SRCS	=	push_swap.c \
 			moves/push.c \
 			moves/rev_rotate.c \
 			moves/rotate.c \
-			moves/swap.c 
+			moves/swap.c \
+			sorting/do_sorting.c \
+			sorting/sort_five.c \
+			sorting/sort_three.c \
 
 OBJS	=	${SRCS:%.c=%.o}
 
