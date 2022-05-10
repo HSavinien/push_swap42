@@ -58,6 +58,6 @@ debug: library
 	${CC} ${CFLAGS} ${LIB} ${SRCS} -g -fsanitize=address -o ${NAME}
 
 generator:
-	${CC} ${CFLAGS} -o generator nb_generator/generator.c
+	${CC} ${CFLAGS} -o get_nbrs nb_generator/generator.c
 
 .PHONY:		all clean fclean re debug
