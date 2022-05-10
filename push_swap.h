@@ -18,8 +18,6 @@
 
 # include "library/libft/libft.h"
 # include "library/printf/lib_printf.h"
-//# include "sorting/sorting.h"
-//# include "moves/moves.h"
 
 //structures    ==================================================    structures
 
