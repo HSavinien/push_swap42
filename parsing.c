@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 18:37:17 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/05 20:16:16 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/05/10 18:23:07 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ t_stack	*read_args(int ac, char **av)
 		check_value(av[ac]);
 		if (value_in_tab(ft_atoi(av[ac]), seen))
 			error("duplicated values in stack");
-		if ((int)ft_atoi(av[ac]) != ft_atoi(av[ac]))
+		if (ft_atoi(av[ac]) > INT_MAX || ft_atoi(av[ac]) < INT_MIN)
 			error("some numbers doesn't fit in type int. try other value");
 		new_val = malloc(sizeof (int));
 		if (!new_val)

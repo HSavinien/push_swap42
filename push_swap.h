@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 16:53:06 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/10 16:18:12 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/05/10 18:16:09 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 # include <stdlib.h>
 # include <stdio.h>//===========================================================DEBUG
+# include <limits.h>
 
 # include "library/libft/libft.h"
 # include "library/printf/lib_printf.h"

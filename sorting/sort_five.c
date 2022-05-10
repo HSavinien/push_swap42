@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/29 17:24:11 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/10 16:38:24 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/05/10 19:33:29 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int		find_smallest( const t_stack *stk)
 	if (!stk)
 		return (- 1);
 	pos = 0;
-	i = 1;
+	i = 0;
 	smallest = *stk->content;
 	while (stk)
 	{
@@ -41,18 +41,17 @@ void	push_smallest(t_stack **sa, t_stack **sb)
 	int	smallest_pos;
 
 	smallest_pos = find_smallest(*sa);
-	if ((size_t) smallest_pos < get_stack_len(*sa) / 2)
+	if (smallest_pos <= 2)
 	{
 		while (smallest_pos --)
 			mv_ra(sa, sb);
 	}
 	else
 	{
-		while (smallest_pos ++ <= (int) get_stack_len(*sa))
+		while (smallest_pos ++ < (int) get_stack_len(*sa))
 			mv_rra(sa, sb);
 	}
 	mv_pb(sa, sb);
-	
 }
 
 void	sort_five(t_stack *sa, t_stack *sb)
@@ -63,3 +62,4 @@ void	sort_five(t_stack *sa, t_stack *sb)
 	mv_pa(&sa, &sb);
 	mv_pa(&sa, &sb);
 }
+
