@@ -18,7 +18,7 @@ void	do_sorting(t_stack *sa, t_stack *sb)
 	int len;
 	len = get_stack_len(sa);
 	if (is_stack_sorted(sa))
-		exit(ft_printf("nothing to be done. Numbers are already sorted\n"));
+		exit(0);
 	else if (len == 3)
 		sort_three(sa, sb);
 	else if (len == 5)

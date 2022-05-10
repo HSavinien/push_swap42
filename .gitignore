@@ -9,3 +9,6 @@ libft.a
 visualizer
 library/libft/libft.a
 library/printf/libftprintf.a
+checker_linux
+checker_mac
+checker

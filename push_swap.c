@@ -21,6 +21,6 @@ int	main(int ac, char **av)
 		return (0);
 	sa = read_args(ac, av);
 	sb = NULL;
-	show_stack(sa);//debug
+//	show_stack(sa);//debug
 	do_sorting(sa, sb);
 }
