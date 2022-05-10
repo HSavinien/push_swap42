@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/29 17:24:11 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/10 19:33:29 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/05/10 19:55:12 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,13 @@ void	push_smallest(t_stack **sa, t_stack **sb)
 
 void	sort_five(t_stack *sa, t_stack *sb)
 {
+	size_t	base_len;
+
+	base_len = get_stack_len(sa);
 	while (get_stack_len(sa) > 3)
 		push_smallest(&sa, &sb);
 	sa = sort_three(sa, sb);
-	mv_pa(&sa, &sb);
-	mv_pa(&sa, &sb);
+	while (get_stack_len(sa) < base_len)
+		mv_pa(&sa, &sb);
 }
 

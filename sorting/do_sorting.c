@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 19:31:20 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/09 21:25:08 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/05/10 19:52:24 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	do_sorting(t_stack *sa, t_stack *sb)
 		exit(0);
 	else if (len == 3)
 		sort_three(sa, sb);
-	else if (len == 5)
+	else if (len <= 5)
 		sort_five(sa, sb);
 	else
 		printf("long sort is not yet implemented");//debug
