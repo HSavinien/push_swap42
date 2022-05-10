@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 16:53:06 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/09 18:57:26 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/05/10 16:18:12 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ void	sort_five(t_stack *sa, t_stack *sb);
 t_stack	*sort_three(t_stack *sa, t_stack *sb);
 
 //utils
+int	find_smallest(const t_stack *stk);
 
 //movements    ----------------------------------------------------    movements
 //subject functions

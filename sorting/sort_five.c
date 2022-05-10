@@ -6,13 +6,13 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/29 17:24:11 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/09 21:25:25 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/05/10 16:38:24 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int		find_smallest(t_stack *stk)
+int		find_smallest( const t_stack *stk)
 {
 	int		smallest;
 	int		pos;
@@ -21,7 +21,7 @@ int		find_smallest(t_stack *stk)
 	if (!stk)
 		return (- 1);
 	pos = 0;
-	i = 0;
+	i = 1;
 	smallest = *stk->content;
 	while (stk)
 	{
@@ -42,11 +42,15 @@ void	push_smallest(t_stack **sa, t_stack **sb)
 
 	smallest_pos = find_smallest(*sa);
 	if ((size_t) smallest_pos < get_stack_len(*sa) / 2)
+	{
 		while (smallest_pos --)
 			mv_ra(sa, sb);
+	}
 	else
-		while (smallest_pos --)
+	{
+		while (smallest_pos ++ <= (int) get_stack_len(*sa))
 			mv_rra(sa, sb);
+	}
 	mv_pb(sa, sb);
 	
 }
@@ -54,10 +58,8 @@ void	push_smallest(t_stack **sa, t_stack **sb)
 void	sort_five(t_stack *sa, t_stack *sb)
 {
 	while (get_stack_len(sa) > 3)
-	{
 		push_smallest(&sa, &sb);
-	}
-	sort_three(sa, sb);
+	sa = sort_three(sa, sb);
 	mv_pa(&sa, &sb);
 	mv_pa(&sa, &sb);
 }
