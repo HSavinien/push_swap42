@@ -13,8 +13,6 @@ t_lss	*find_lds(t_stack *stk)
 
 }
 
-
-
 void	sort_many(t_stack sa, t_stack sb)
 {
 	t_lss	*lis;
