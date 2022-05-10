@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 22:20:16 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/04 22:20:17 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/05/10 17:06:56 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,14 @@ void	do_rev_rotate(t_stack **src)
 void	mv_rra(t_stack **sa, t_stack **sb)
 {
 	do_rev_rotate(sa);
-	ft_printf("rra\n");
+	write(1, "rra\n", 4);
 	(void) sb;
 }
 
 void	mv_rrb(t_stack **sa, t_stack **sb)
 {
 	do_rev_rotate(sb);
-	ft_printf("rrb\n");
+	write(1, "rrb\n", 4);
 	(void) sa;
 }
 
@@ -47,5 +47,5 @@ void	mv_rrr(t_stack **sa, t_stack **sb)
 {
 	do_rev_rotate(sa);
 	do_rev_rotate(sb);
-	ft_printf("rrr\n");
+	ft_printf("rra\n");
 }
