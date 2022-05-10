@@ -54,9 +54,10 @@ void	push_smallest(t_stack **sa, t_stack **sb)
 void	sort_five(t_stack *sa, t_stack *sb)
 {
 	while (get_stack_len(sa) > 3)
-	push_smallest(&sa, &sb);
+	{
+		push_smallest(&sa, &sb);
+	}
 	sort_three(sa, sb);
 	mv_pa(&sa, &sb);
 	mv_pa(&sa, &sb);
-	show_stack(sa);//debug
 }
