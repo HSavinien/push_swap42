@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 16:53:06 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/10 18:16:09 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/05/13 19:31:51 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,17 @@
 
 typedef struct s_stack {
 	int				*content;
+	int				index;
 	struct s_stack	*next;
 }	t_stack;
 
-typedef struct s_lss {
+typedef struct s_lis {
 	int		len;
 	int		pos_num;
 	int		first_val;
 	int		last_val;
 	t_stack	*pos;
-}	t_lss;
+}	t_lis;
 
 //functions    ====================================================    functions
 
@@ -41,6 +42,7 @@ typedef struct s_lss {
 t_stack	*read_args(int ac, char **av);
 void	check_value(char *content);
 int		value_in_tab(int val, int *tab);
+void	give_index(t_stack *stk);
 
 //utils    ------------------------------------------------------------    utils
 //general

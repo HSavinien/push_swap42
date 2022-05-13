@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 17:58:27 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/05 20:18:53 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/05/13 19:22:44 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ t_stack	*stack_add_front(t_stack *stack, int *content)
 		new->content = NULL;
 	else
 		new->content = content;
+	new->index = 0;
 	new->next = stack;
 	return (new);
 }

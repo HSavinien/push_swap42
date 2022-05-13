@@ -2,6 +2,7 @@ SRCS	=	push_swap.c \
 			debug.c \
 			exit.c \
 			parsing.c \
+			parsing_index.c \
 			general_utils.c \
 			stack_utils.c \
 			moves/push.c \

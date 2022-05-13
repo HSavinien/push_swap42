@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 18:37:17 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/10 18:23:07 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/05/13 19:33:27 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,5 +95,6 @@ t_stack	*read_args(int ac, char **av)
 		element = stack_add_front(element, new_val);
 		ac --;
 	}
+	give_index(element);
 	return (element);
 }
