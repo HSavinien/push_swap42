@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 16:53:06 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/13 19:31:51 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/05/13 20:19:31 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ typedef struct s_stack {
 typedef struct s_lis {
 	int		len;
 	int		pos_num;
-	int		first_val;
-	int		last_val;
+	int		first_index;
+	int		last_index;
 	t_stack	*pos;
 }	t_lis;
 
