@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 16:53:06 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/13 20:19:31 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/05/16 16:51:01 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,16 @@ typedef struct s_lis {
 	int		last_index;
 	t_stack	*pos;
 }	t_lis;
+
+typedef struct	s_moves {
+	int	ra;
+	int	rb;
+	int rr;
+	int rra;
+	int rrb;
+	int rrr;
+	int	total;
+} t_moves;
 
 //functions    ====================================================    functions
 
