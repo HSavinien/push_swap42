@@ -6,14 +6,14 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 16:53:06 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/19 03:40:00 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/05/19 05:58:12 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 # include <stdlib.h>
-# include <stdio.h>//===========================================================DEBUG
+# include <stdio.h>//======================================================DEBUG
 # include <limits.h>
 
 # include "library/libft/libft.h"
@@ -35,15 +35,15 @@ typedef struct s_lis {
 	t_stack	*pos;
 }	t_lis;
 
-typedef struct	s_moves {
+typedef struct s_moves {
 	int	ra;
 	int	rb;
-	int rr;
-	int rra;
-	int rrb;
-	int rrr;
+	int	rr;
+	int	rra;
+	int	rrb;
+	int	rrr;
 	int	total;
-} t_moves;
+}	t_moves;
 
 //functions    ====================================================    functions
 
@@ -63,7 +63,6 @@ t_stack	*stack_add_front(t_stack *stack, int *content);
 size_t	get_stack_len(t_stack *s);
 int		is_stack_sorted(t_stack *stack);
 t_stack	*stack_find_last(t_stack *s);
-
 
 //sorting    --------------------------------------------------------    sorting
 //general

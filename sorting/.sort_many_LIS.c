@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 20:02:12 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/14 13:01:14 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/05/19 05:42:38 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 t_lis	*init_lis(void)
 {
 	t_lis	*lis;
+
 	lis = malloc(sizeof (t_lis));
 	lis->len = 0;
 

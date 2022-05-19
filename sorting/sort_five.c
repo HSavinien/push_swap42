@@ -6,20 +6,20 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/29 17:24:11 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/18 17:57:34 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/05/19 05:48:36 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int		find_smallest( const t_stack *stk)
+int	find_smallest( const t_stack *stk)
 {
 	int		smallest;
 	int		pos;
 	int		i;
 
 	if (!stk)
-		return (- 1);
+		return (-1);
 	pos = 0;
 	i = 0;
 	smallest = *stk->content;

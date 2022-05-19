@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 14:22:22 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/13 19:37:59 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/05/19 05:54:28 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,5 @@ int	main(int ac, char **av)
 		return (0);
 	sa = read_args(ac, av);
 	sb = NULL;
-//	system("leaks push_swap");
-	show_stack(sa);//debug
 	do_sorting(sa, sb);
 }

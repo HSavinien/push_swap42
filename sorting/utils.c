@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 13:13:32 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/19 04:42:02 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/05/19 05:39:53 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ t_moves	*init_mvs(void)
 {
 	t_moves	*mvs;
 
-//	printf("entering init_mvs fct\n");//========================================debug
 	mvs = malloc(sizeof (t_moves));
 	mvs->ra = 0;
 	mvs->rb = 0;
@@ -32,7 +31,6 @@ int	find_pos_in_stack(t_stack *element, t_stack *stk)
 {
 	int	i;
 
-//	printf("entering find_pos_in_stack fct\n");//===============================debug
 	i = 0;
 	while (stk && stk != element)
 	{
@@ -50,12 +48,11 @@ int	nb_mvs_to_top(t_stack *node, t_stack *stk)
 	int	nb_mvs;
 	int	pos;
 
-//	printf("entering nb_mvs_to_top fct\n");//===================================debug
 	if (!node || !stk)
 		return (0);
 	pos = find_pos_in_stack(node, stk);
 	nb_mvs = 0;
-	if(pos <= (int)get_stack_len(stk) / 2)
+	if (pos <= (int)get_stack_len(stk) / 2)
 	{
 		while (pos --)
 			nb_mvs ++;

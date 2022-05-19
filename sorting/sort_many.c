@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 20:02:12 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/19 05:04:15 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/05/19 05:53:11 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ static t_moves	*optimise_mv(t_moves *mvs)
 
 static t_stack	*get_dest(t_stack *node, t_stack *stk)
 {
-	
 	while (stk->index < node->index && stk->next)
 		stk = stk->next;
 	if (stk->next)
@@ -54,13 +53,13 @@ static t_moves	*count_moves(t_stack *node, t_stack *sa, t_stack *sb)
 		mvs->rrb += -tmp;
 	dst = get_dest(node, sa);
 	if (!dst)
-		return(optimise_mv(mvs));
+		return (optimise_mv(mvs));
 	tmp = nb_mvs_to_top(dst, sa);
 	if (tmp > 0)
 		mvs->ra += tmp;
 	else
 		mvs->rra += -tmp;
-	return(optimise_mv(mvs));
+	return (optimise_mv(mvs));
 }
 
 static t_moves	*find_best_moves(t_stack *sa, t_stack *sb)
@@ -71,11 +70,11 @@ static t_moves	*find_best_moves(t_stack *sa, t_stack *sb)
 
 	true_mvs = count_moves(sb, sa, sb);
 	curent = sb->next;
-	while(curent)
+	while (curent)
 	{
 		tmp_mvs = count_moves(curent, sa, sb);
 		if (tmp_mvs->total < true_mvs->total)
-			ft_swap_ptr((void**)&true_mvs, (void**)&tmp_mvs);
+			ft_swap_ptr((void **) &true_mvs, (void **) &tmp_mvs);
 		free(tmp_mvs);
 		curent = curent->next;
 	}

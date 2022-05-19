@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 19:31:31 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/13 19:49:26 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/05/19 05:54:10 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ static t_stack	*find_next_smallest(t_stack *stk)
 
 void	give_index(t_stack *stk)
 {
-	t_stack *curent;
+	t_stack	*curent;
 	int		index;
 	int		len;
-	
+
 	len = get_stack_len(stk);
 	index = 1;
 	while (index <= len)
