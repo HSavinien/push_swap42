@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 17:31:09 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/13 19:37:31 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/05/19 03:59:19 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	show_stack(t_stack *stack)
 	while (stack)
 	{
 		if (stack->content)
-			printf("%d(%d) | ", *stack->content, stack->index);
+			printf("\033[1m%d\033[0m(%d) | ", *stack->content, stack->index);
 		else
 			printf("(null) | ");
 		stack = stack->next;

@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 13:13:32 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/19 03:34:35 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/05/19 04:42:02 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ t_moves	*init_mvs(void)
 {
 	t_moves	*mvs;
 
+//	printf("entering init_mvs fct\n");//========================================debug
 	mvs = malloc(sizeof (t_moves));
 	mvs->ra = 0;
 	mvs->rb = 0;
@@ -31,6 +32,7 @@ int	find_pos_in_stack(t_stack *element, t_stack *stk)
 {
 	int	i;
 
+//	printf("entering find_pos_in_stack fct\n");//===============================debug
 	i = 0;
 	while (stk && stk != element)
 	{
@@ -48,6 +50,7 @@ int	nb_mvs_to_top(t_stack *node, t_stack *stk)
 	int	nb_mvs;
 	int	pos;
 
+//	printf("entering nb_mvs_to_top fct\n");//===================================debug
 	if (!node || !stk)
 		return (0);
 	pos = find_pos_in_stack(node, stk);
@@ -67,18 +70,19 @@ int	nb_mvs_to_top(t_stack *node, t_stack *stk)
 
 void	do_moves(t_moves *mvs, t_stack **sa, t_stack **sb)
 {
-	while (mvs->ra)
+	while (mvs->ra --)
 		mv_ra(sa, sb);
-	while (mvs->rra)
+	while (mvs->rra --)
 		mv_rra(sa, sb);
-	while (mvs->rb)
+	while (mvs->rb --)
 		mv_rb(sa, sb);
-	while (mvs->rrb)
+	while (mvs->rrb --)
 		mv_rrb(sa, sb);
-	while (mvs->rr)
+	while (mvs->rr --)
 		mv_rr(sa, sb);
-	while (mvs->rrr)
+	while (mvs->rrr --)
 		mv_rrr(sa, sb);
+	mv_pa(sa, sb);
 	if (!is_stack_sorted(*sa))
 		mv_ra(sa, sb);
 }

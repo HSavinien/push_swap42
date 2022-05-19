@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 20:02:12 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/19 03:31:57 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/05/19 04:47:01 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 static t_moves	*optimise_mv(t_moves *mvs)
 {
+//	printf("entering optimise_mv fct\n");//=====================================debug
 	while (mvs->ra && mvs->rb)
 	{
 		mvs->ra --;
@@ -32,6 +33,8 @@ static t_moves	*optimise_mv(t_moves *mvs)
 
 static t_stack	*get_dest(t_stack *node, t_stack *stk)
 {
+	
+//	printf("entering get_dest fct\n");//========================================debug
 	while (stk->index < node->index && stk->next)
 		stk = stk->next;
 	if (stk->next)
@@ -44,6 +47,8 @@ static t_moves	*count_moves(t_stack *node, t_stack *sa, t_stack *sb)
 	t_moves	*mvs;
 	int		tmp;
 	t_stack	*dst;
+
+//	printf("entering count_moves fct\n");//=====================================debug
 	mvs = init_mvs();
 	tmp = nb_mvs_to_top(node, sb);
 	if (tmp > 0)
@@ -67,13 +72,14 @@ static t_moves	*find_best_moves(t_stack *sa, t_stack *sb)
 	t_moves	*tmp_mvs;
 	t_moves	*true_mvs;
 
+//	printf("entering find_best_moves fct\n");//=================================debug
 	true_mvs = count_moves(sb, sa, sb);
 	curent = sb->next;
 	while(curent)
 	{
 		tmp_mvs = count_moves(curent, sa, sb);
 		if (tmp_mvs->total < true_mvs->total)
-			ft_swap_ptr(true_mvs, tmp_mvs);
+			ft_swap_ptr((void**)&true_mvs, (void**)&tmp_mvs);
 		free(tmp_mvs);
 		curent = curent->next;
 	}
@@ -83,6 +89,8 @@ static t_moves	*find_best_moves(t_stack *sa, t_stack *sb)
 void	sort_many(t_stack *sa, t_stack *sb)
 {
 	t_moves	*mvs;
+
+//	printf("entering sort_many fct\n");//=======================================debug
 	while (get_stack_len(sa) > 3)
 		mv_pb(&sa, &sb);
 	while (sb)
