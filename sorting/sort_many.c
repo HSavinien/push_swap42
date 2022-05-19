@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 20:02:12 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/19 04:47:01 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/05/19 05:04:15 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 static t_moves	*optimise_mv(t_moves *mvs)
 {
-//	printf("entering optimise_mv fct\n");//=====================================debug
 	while (mvs->ra && mvs->rb)
 	{
 		mvs->ra --;
@@ -34,7 +33,6 @@ static t_moves	*optimise_mv(t_moves *mvs)
 static t_stack	*get_dest(t_stack *node, t_stack *stk)
 {
 	
-//	printf("entering get_dest fct\n");//========================================debug
 	while (stk->index < node->index && stk->next)
 		stk = stk->next;
 	if (stk->next)
@@ -48,7 +46,6 @@ static t_moves	*count_moves(t_stack *node, t_stack *sa, t_stack *sb)
 	int		tmp;
 	t_stack	*dst;
 
-//	printf("entering count_moves fct\n");//=====================================debug
 	mvs = init_mvs();
 	tmp = nb_mvs_to_top(node, sb);
 	if (tmp > 0)
@@ -72,7 +69,6 @@ static t_moves	*find_best_moves(t_stack *sa, t_stack *sb)
 	t_moves	*tmp_mvs;
 	t_moves	*true_mvs;
 
-//	printf("entering find_best_moves fct\n");//=================================debug
 	true_mvs = count_moves(sb, sa, sb);
 	curent = sb->next;
 	while(curent)
@@ -90,11 +86,12 @@ void	sort_many(t_stack *sa, t_stack *sb)
 {
 	t_moves	*mvs;
 
-//	printf("entering sort_many fct\n");//=======================================debug
 	while (get_stack_len(sa) > 3)
 		mv_pb(&sa, &sb);
+	sa = sort_three(sa, sb);
 	while (sb)
 	{
+		printf("loop\n");
 		mvs = find_best_moves(sa, sb);
 		do_moves(mvs, &sa, &sb);
 	}
