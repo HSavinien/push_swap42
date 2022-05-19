@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 06:46:55 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/19 12:59:04 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/05/19 16:52:37 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,30 @@
 
 void	read_move(char	*line, t_stack **sa, t_stack **sb)
 {
-	if(!ft_strncmp(line, "sa", 2))
+	if(!ft_strncmp(line, "sa\n", 3))
 		mv_sa(sa, sb);
-	else if(!ft_strncmp(line, "sb", 2))
+	else if(!ft_strncmp(line, "sb\n", 3))
 		mv_sb(sa, sb);
-	else if(!ft_strncmp(line, "ss", 2))
+	else if(!ft_strncmp(line, "ss\n", 3))
 		mv_ss(sa, sb);
-	else if(!ft_strncmp(line, "ra", 2))
+	else if(!ft_strncmp(line, "ra\n", 3))
 		mv_ra(sa, sb);
-	else if(!ft_strncmp(line, "rb", 2))
+	else if(!ft_strncmp(line, "rb\n", 3))
 		mv_rb(sa, sb);
-	else if(!ft_strncmp(line, "rr", 2))
+	else if(!ft_strncmp(line, "rr\n", 3))
 		mv_rr(sa, sb);
-	else if(!ft_strncmp(line, "rra", 3))
+	else if(!ft_strncmp(line, "rra\n", 4))
 		mv_rra(sa, sb);
-	else if(!ft_strncmp(line, "rrb", 3))
+	else if(!ft_strncmp(line, "rrb\n", 4))
 		mv_rrb(sa, sb);
-	else if(!ft_strncmp(line, "rrr", 3))
+	else if(!ft_strncmp(line, "rrr\n", 4))
 		mv_rrr(sa, sb);
-	else if(!ft_strncmp(line, "pa", 2))
+	else if(!ft_strncmp(line, "pa\n", 3))
 		mv_pa(sa, sb);
-	else if(!ft_strncmp(line, "pb", 2))
+	else if(!ft_strncmp(line, "pb\n", 3))
 		mv_pb(sa, sb);
 	else
 		exit(ft_printf("error\n"));
-//	show_stack(*sa);//debug
-//	show_stack(*sb);//debug
 }
 
 void	do_checking(t_stack *sa, t_stack *sb)
