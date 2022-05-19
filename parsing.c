@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 18:37:17 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/13 19:33:27 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/05/19 06:39:42 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,8 @@ char	**get_true_av(int *ac, char **av)
 	}
 	*ac = get_nb_word(av[1]);
 	av = ft_split_word(av[1]);
+	if (!av[0])
+		error("empty argument");
 	return (av);
 }
 
