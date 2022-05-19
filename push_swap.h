@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 16:53:06 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/17 15:16:32 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/05/19 03:40:00 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,10 +70,14 @@ t_stack	*stack_find_last(t_stack *s);
 void	do_sorting(t_stack *sa, t_stack *sb);
 void	sort_five(t_stack *sa, t_stack *sb);
 t_stack	*sort_three(t_stack *sa, t_stack *sb);
+void	sort_many(t_stack *sa, t_stack *sb);
 
 //utils
-int	find_smallest(const t_stack *stk);
+int		find_smallest(const t_stack *stk);
 t_moves	*init_mvs(void);
+int		find_pos_in_stack(t_stack *element, t_stack *stk);
+void	do_moves(t_moves *mvs, t_stack **stk, t_stack **sb);
+int		nb_mvs_to_top(t_stack *node, t_stack *stk);
 
 //movements    ----------------------------------------------------    movements
 //subject functions

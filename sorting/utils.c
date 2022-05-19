@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 13:13:32 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/17 13:50:36 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/05/19 03:34:35 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,60 @@ t_moves	*init_mvs(void)
 	mvs->rrr = 0;
 	mvs->total = 0;
 	return (mvs);
+}
+
+int	find_pos_in_stack(t_stack *element, t_stack *stk)
+{
+	int	i;
+
+	i = 0;
+	while (stk && stk != element)
+	{
+		stk = stk->next;
+		i ++;
+	}
+	if (!stk)
+		return (-1);
+	return (i);
+}
+
+//return a positive number if the move is rotate, a  negative if it's rev_rotate
+int	nb_mvs_to_top(t_stack *node, t_stack *stk)
+{
+	int	nb_mvs;
+	int	pos;
+
+	if (!node || !stk)
+		return (0);
+	pos = find_pos_in_stack(node, stk);
+	nb_mvs = 0;
+	if(pos <= (int)get_stack_len(stk) / 2)
+	{
+		while (pos --)
+			nb_mvs ++;
+	}
+	else
+	{
+		while (pos ++ < (int)get_stack_len(stk))
+			nb_mvs --;
+	}
+	return (nb_mvs);
+}
+
+void	do_moves(t_moves *mvs, t_stack **sa, t_stack **sb)
+{
+	while (mvs->ra)
+		mv_ra(sa, sb);
+	while (mvs->rra)
+		mv_rra(sa, sb);
+	while (mvs->rb)
+		mv_rb(sa, sb);
+	while (mvs->rrb)
+		mv_rrb(sa, sb);
+	while (mvs->rr)
+		mv_rr(sa, sb);
+	while (mvs->rrr)
+		mv_rrr(sa, sb);
+	if (!is_stack_sorted(*sa))
+		mv_ra(sa, sb);
 }

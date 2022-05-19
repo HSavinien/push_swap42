@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/29 17:24:11 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/10 19:55:12 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/05/18 17:57:34 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,3 @@ void	sort_five(t_stack *sa, t_stack *sb)
 	while (get_stack_len(sa) < base_len)
 		mv_pa(&sa, &sb);
 }
-

@@ -12,6 +12,8 @@ SRCS	=	push_swap.c \
 			sorting/do_sorting.c \
 			sorting/sort_five.c \
 			sorting/sort_three.c \
+			sorting/sort_many.c \
+			sorting/utils.c \
 
 OBJS	=	${SRCS:%.c=%.o}
 

@@ -1,31 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   do_sorting.c                                       :+:      :+:    :+:   */
+/*   sort_many_2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/25 19:31:20 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/19 03:39:09 by tmongell         ###   ########.fr       */
+/*   Created: 2022/05/19 01:45:22 by tmongell          #+#    #+#             */
+/*   Updated: 2022/05/19 03:23:28 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
-//analize the input and call the best algo depending on the number list. for now, it mostly discriminate between short/long array
-void	do_sorting(t_stack *sa, t_stack *sb)
-{
-	int len;
-	len = get_stack_len(sa);
-//	try_rotate_sort(*sa);
-	if (is_stack_sorted(sa))
-		exit(0);
-	if (len == 2)
-		ft_printf("sa\n");
-	else if (len == 3)
-		sort_three(sa, sb);
-	else if (len <= 5)
-		sort_five(sa, sb);
-	else
-		sort_many(sa, sb);
-}
