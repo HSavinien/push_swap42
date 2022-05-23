@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 13:13:32 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/19 05:39:53 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/05/23 19:35:11 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,8 @@ int	nb_mvs_to_top(t_stack *node, t_stack *stk)
 
 void	do_moves(t_moves *mvs, t_stack **sa, t_stack **sb)
 {
+	printf("ra:%d;rb:%d;rr:%d;rra:%d;rrb:%d;rrr:%d;total:%d\n",
+		mvs->ra, mvs->rb, mvs->rr, mvs->rra, mvs->rrb, mvs->rrr, mvs->total);
 	while (mvs->ra --)
 		mv_ra(sa, sb);
 	while (mvs->rra --)

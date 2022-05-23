@@ -29,6 +29,7 @@ BSRCS	=	bonus/checker.c \
 
 OBJS	=	${SRCS:%.c=%.o}
 BOBJS	=	${BSRCS:%.c=%.o}
+TOBJS	=	${TSRC:%.c=%.o}
 
 CC		=	gcc
 
@@ -37,6 +38,8 @@ CFLAGS	=	-Wall -Wextra -Werror
 LIB		=	-L./library/printf -lftprintf -L./library/libft -lft
 
 NAME	=	push_swap
+
+TSRC	=	fct_test.c
 
 #rules    -------------------------------------------------------------    rules
 
@@ -57,7 +60,7 @@ libft:
 	@echo "libft compiled"
 
 clean:
-	@rm -rf ${OBJS} ${NAME}.dSYM ${BOBJS}
+	@rm -rf ${OBJS} ${NAME}.dSYM ${BOBJS} test
 	@make -s -C ./library/printf clean
 	@make -s -C ./library/libft clean
 	@echo "object files removed"
@@ -81,7 +84,7 @@ debug: library
 generator:
 	${CC} ${CFLAGS} -o get_nbrs nb_generator/generator.c
 
-unit_test: library
-	${CC} ${CFLAGS} -g ${LIB} ${SRCS} fct_test.c
+test: library ${TOBJS} ${OBJS}
+	${CC} ${CFLAGS} -g ${LIB} ${SRCS} ${TSRC} -o test
 
 .PHONY:		all clean fclean re debug bonus

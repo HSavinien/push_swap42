@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 22:43:55 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/19 08:49:56 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/05/23 15:42:20 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	do_rotate(t_stack **src)
 {
 	t_stack	*last;
 
+	if (!*src || !(*src)->next)
+		return;
 	last = stack_find_last(*src);
 	last->next = *src;
 	*src = (*src)->next;
