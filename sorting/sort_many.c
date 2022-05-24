@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 20:02:12 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/19 16:59:04 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/05/24 15:21:01 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,12 +87,19 @@ void	sort_many(t_stack *sa, t_stack *sb)
 
 	while (get_stack_len(sa) > 3)
 		mv_pb(&sa, &sb);
+//	show_stack(sa);//debug
+	show_stack(sb);//debug
 	sa = sort_three(sa, sb);
+	show_stack(sa);//debug
+//	printf("\033[1mentering the real thing\033[0m\n");
 	while (sb)
 	{
+//		printf("loop in core\n");
 		mvs = find_best_moves(sa, sb);
 		do_moves(mvs, &sa, &sb);
+		show_stack(sa);//debug
+		show_stack(sb);//debug
 	}
-	show_stack(sa);
-	show_stack(sb);
+	show_stack(sa);//debug
+	show_stack(sb);//debug
 }

@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 06:04:57 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/23 19:38:57 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/05/24 13:02:24 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,12 +76,15 @@ void	test_do_moves()
 	mvs->total = 3;
 	do_moves(mvs, &sa, &sb);
 	free(mvs);
-	mvs = init_mvs()
+	mvs = init_mvs();
 	mvs->rrb = 2;
 	mvs->total = 2;
-	printf("doing_moves\n");
 	do_moves(mvs, &sa, &sb);
+	show_stack(sa);
+	show_stack(sb);
 }
+
+void	
 
 int	main()
 {

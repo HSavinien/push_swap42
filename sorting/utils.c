@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 13:13:32 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/23 19:35:11 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/05/24 15:19:42 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,24 +64,28 @@ int	nb_mvs_to_top(t_stack *node, t_stack *stk)
 	}
 	return (nb_mvs);
 }
-
+/*
+void	do_good_rotate(sa)
+{
+	
+}
+*/
 void	do_moves(t_moves *mvs, t_stack **sa, t_stack **sb)
 {
-	printf("ra:%d;rb:%d;rr:%d;rra:%d;rrb:%d;rrr:%d;total:%d\n",
-		mvs->ra, mvs->rb, mvs->rr, mvs->rra, mvs->rrb, mvs->rrr, mvs->total);
-	while (mvs->ra --)
+	while (mvs->ra -- > 0)
 		mv_ra(sa, sb);
-	while (mvs->rra --)
+	while (mvs->rra -- > 0)
 		mv_rra(sa, sb);
-	while (mvs->rb --)
+	while (mvs->rb -- > 0)
 		mv_rb(sa, sb);
-	while (mvs->rrb --)
+	while (mvs->rrb -- > 0)
 		mv_rrb(sa, sb);
-	while (mvs->rr --)
+	while (mvs->rr -- > 0)
 		mv_rr(sa, sb);
-	while (mvs->rrr --)
+	while (mvs->rrr -- > 0)
 		mv_rrr(sa, sb);
 	mv_pa(sa, sb);
 	if (!is_stack_sorted(*sa))
 		mv_ra(sa, sb);
+		//do_good_rotate(sa);
 }
