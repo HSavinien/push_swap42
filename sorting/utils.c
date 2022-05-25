@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 13:13:32 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/24 15:19:42 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/05/25 15:15:48 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,12 +64,16 @@ int	nb_mvs_to_top(t_stack *node, t_stack *stk)
 	}
 	return (nb_mvs);
 }
-/*
-void	do_good_rotate(sa)
+
+void	do_good_rotate(t_stack **sa, t_stack **sb)
 {
-	
+	t_stack	*last;
+
+	last = stack_find_last(*sa);
+	if(last->index < (*sa)->index)
+		mv_rra(sa, sb);
 }
-*/
+
 void	do_moves(t_moves *mvs, t_stack **sa, t_stack **sb)
 {
 	while (mvs->ra -- > 0)
@@ -86,6 +90,5 @@ void	do_moves(t_moves *mvs, t_stack **sa, t_stack **sb)
 		mv_rrr(sa, sb);
 	mv_pa(sa, sb);
 	if (!is_stack_sorted(*sa))
-		mv_ra(sa, sb);
-		//do_good_rotate(sa);
+		do_good_rotate(sa, sb);
 }

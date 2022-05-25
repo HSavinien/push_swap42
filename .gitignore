@@ -12,3 +12,5 @@ library/printf/libftprintf.a
 checker_linux
 checker_mac
 checker
+tests
+*.tar.gz

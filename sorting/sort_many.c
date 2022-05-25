@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 20:02:12 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/24 15:21:01 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/05/25 18:45:23 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ static t_moves	*optimise_mv(t_moves *mvs)
 
 static t_stack	*get_dest(t_stack *node, t_stack *stk)
 {
+	printf("%d | ", node->index);//debug
 	while (stk->index < node->index && stk->next)
 		stk = stk->next;
 	if (stk->next)
@@ -52,6 +53,7 @@ static t_moves	*count_moves(t_stack *node, t_stack *sa, t_stack *sb)
 	else
 		mvs->rrb += -tmp;
 	dst = get_dest(node, sa);
+	printf("dst : %p\n", dst);//debug
 	if (!dst)
 		return (optimise_mv(mvs));
 	tmp = nb_mvs_to_top(dst, sa);
@@ -87,19 +89,16 @@ void	sort_many(t_stack *sa, t_stack *sb)
 
 	while (get_stack_len(sa) > 3)
 		mv_pb(&sa, &sb);
-//	show_stack(sa);//debug
-	show_stack(sb);//debug
 	sa = sort_three(sa, sb);
+	printf("presorting give : \n");//debug
 	show_stack(sa);//debug
-//	printf("\033[1mentering the real thing\033[0m\n");
+	show_stack(sb);//debug
 	while (sb)
 	{
-//		printf("loop in core\n");
 		mvs = find_best_moves(sa, sb);
 		do_moves(mvs, &sa, &sb);
+		printf("new state :\n");
 		show_stack(sa);//debug
 		show_stack(sb);//debug
 	}
-	show_stack(sa);//debug
-	show_stack(sb);//debug
 }
