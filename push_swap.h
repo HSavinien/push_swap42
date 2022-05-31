@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 16:53:06 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/19 05:58:12 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/05/30 18:47:20 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ t_stack	*stack_add_front(t_stack *stack, int *content);
 size_t	get_stack_len(t_stack *s);
 int		is_stack_sorted(t_stack *stack);
 t_stack	*stack_find_last(t_stack *s);
+void	destroy_stack(t_stack *stk);
+t_stack	*copy_stack(t_stack *src);
 
 //sorting    --------------------------------------------------------    sorting
 //general
@@ -104,6 +106,6 @@ int		error(char *msg);
 //debug    ------------------------------------------------------------    debug
 
 int		show_stack(t_stack *stack);
-void	test_moves(t_stack *sa, t_stack *sb);
+void	show_both_stack(t_stack *sa, t_stack *sb, char *msg);
 
 #endif

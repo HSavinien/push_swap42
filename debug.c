@@ -6,12 +6,12 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 17:31:09 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/20 14:58:46 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/05/30 15:37:26 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "stdio.h"
+#include <stdio.h>
 
 int	show_stack(t_stack *stack)
 {
@@ -29,4 +29,13 @@ int	show_stack(t_stack *stack)
 	}
 	printf("\n");
 	return (i);
+}
+
+void	show_both_stack(t_stack *sa, t_stack *sb, char *msg)
+{
+	printf("%s\n", msg);
+	printf("sa : ");
+	show_stack(sa);
+	printf("sb : ");
+	show_stack(sb);
 }

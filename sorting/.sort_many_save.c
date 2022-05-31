@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 20:02:12 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/31 16:40:22 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/05/30 15:20:45 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,33 +30,14 @@ static t_moves	*optimise_mv(t_moves *mvs)
 	return (mvs);
 }
 
-//function assume that sa is not sorted, but can be with only rotate/rev_rotate.
 static t_stack	*get_dest(t_stack *node, t_stack *stk)
 {
-	t_stack	*cpy;
-	t_stack *save_cpy;
-	
-	cpy = copy_stack(stk);
-	save_cpy = cpy;
-	while (!is_stack_sorted(cpy))
-	{
-		do_rotate(&cpy);
-		if (cpy == save_cpy){//debug
-			printf("error here. sa is :\n");//
-			show_stack(stk);//
-			exit(0);//
-		}//debug
-	}
-	show_stack(cpy);//debug
-	while (cpy->index < node->index && cpy->next)
-		cpy = cpy->next;
-	if (!cpy->next)
-		cpy = save_cpy;
-	printf("dest found : \033[1;32m%d\033[0m\n", cpy->index);//debug
-	while (cpy->index != stk->index)
+	printf("%d | ", node->index);//debug
+	while (stk->index < node->index && stk->next)
 		stk = stk->next;
-	destroy_stack(cpy);
-	return(stk);
+	if (stk->next)
+		return (stk);
+	return (NULL);
 }
 
 static t_moves	*count_moves(t_stack *node, t_stack *sa, t_stack *sb)
@@ -71,8 +52,8 @@ static t_moves	*count_moves(t_stack *node, t_stack *sa, t_stack *sb)
 		mvs->rb += tmp;
 	else
 		mvs->rrb += -tmp;
-	printf("searching dst for element %d\n", node->index);//debug
 	dst = get_dest(node, sa);
+	printf("dst : %p\n", dst);//debug
 	if (!dst)
 		return (optimise_mv(mvs));
 	tmp = nb_mvs_to_top(dst, sa);
@@ -109,12 +90,15 @@ void	sort_many(t_stack *sa, t_stack *sb)
 	while (get_stack_len(sa) > 3)
 		mv_pb(&sa, &sb);
 	sa = sort_three(sa, sb);
-	show_both_stack(sa, sb, "presorting give :");//debug
+	printf("presorting give : \n");//debug
+	show_stack(sa);//debug
+	show_stack(sb);//debug
 	while (sb)
 	{
-		printf("\033[1;31mloop\033[0m\n");//debug
 		mvs = find_best_moves(sa, sb);
 		do_moves(mvs, &sa, &sb);
-		show_both_stack(sa, sb, "new_state :");//debug
+		printf("new state :\n");
+		show_stack(sa);//debug
+		show_stack(sb);//debug
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 17:58:27 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/13 19:22:44 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/05/31 14:38:40 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,27 @@ t_stack	*stack_find_last(t_stack *s)
 	while (s->next)
 		s = s->next;
 	return (s);
+}
+
+t_stack	*copy_stack(t_stack *src)
+{
+	t_stack	*cpy;
+	t_stack	*last;
+
+	cpy = malloc(sizeof (t_stack));
+	if (!cpy)
+		error("unexpected malloc error");
+	last = cpy;
+	while (src->next)
+	{
+		last->content = src->content;
+		last->index = src->index;
+		last->next = malloc(sizeof(t_stack));
+		last = last->next;
+		src = src->next;
+	}
+	last->content = src->content;
+	last->index = src->index;
+	last->next=NULL;
+	return (cpy);
 }

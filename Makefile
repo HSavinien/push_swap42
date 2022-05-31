@@ -5,6 +5,7 @@ SRCS	=	push_swap.c \
 			parsing_index.c \
 			general_utils.c \
 			stack_utils.c \
+			stack_utils2.c \
 			moves/push.c \
 			moves/rev_rotate.c \
 			moves/rotate.c \
