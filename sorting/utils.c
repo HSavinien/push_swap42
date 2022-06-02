@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 13:13:32 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/25 15:15:48 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/06/02 17:17:38 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,7 @@ t_moves	*init_mvs(void)
 {
 	t_moves	*mvs;
 
-	mvs = malloc(sizeof (t_moves));
-	mvs->ra = 0;
-	mvs->rb = 0;
-	mvs->rr = 0;
-	mvs->rra = 0;
-	mvs->rrb = 0;
-	mvs->rrr = 0;
-	mvs->total = 0;
+	mvs = ft_calloc(sizeof (t_moves), 1);
 	return (mvs);
 }
 
@@ -65,17 +58,9 @@ int	nb_mvs_to_top(t_stack *node, t_stack *stk)
 	return (nb_mvs);
 }
 
-void	do_good_rotate(t_stack **sa, t_stack **sb)
-{
-	t_stack	*last;
-
-	last = stack_find_last(*sa);
-	if(last->index < (*sa)->index)
-		mv_rra(sa, sb);
-}
-
 void	do_moves(t_moves *mvs, t_stack **sa, t_stack **sb)
 {
+	show_both_stack(*sa, *sb, "about to push. for now, stack are :");//debug
 	while (mvs->ra -- > 0)
 		mv_ra(sa, sb);
 	while (mvs->rra -- > 0)
@@ -88,7 +73,7 @@ void	do_moves(t_moves *mvs, t_stack **sa, t_stack **sb)
 		mv_rr(sa, sb);
 	while (mvs->rrr -- > 0)
 		mv_rrr(sa, sb);
+	printf("element to push is \033[1;32m%d\033[0m\n", (*sb)->index);//debug
 	mv_pa(sa, sb);
-	if (!is_stack_sorted(*sa))
-		do_good_rotate(sa, sb);
+	show_both_stack(*sa, *sb, "new state :");//debug
 }
