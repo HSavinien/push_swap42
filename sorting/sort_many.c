@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 20:02:12 by tmongell          #+#    #+#             */
-/*   Updated: 2022/06/02 17:04:10 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/06/02 18:29:15 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static t_moves	*optimise_mv(t_moves *mvs)
 		mvs->rrr ++;
 	}
 	mvs->total = mvs->ra + mvs->rb + mvs->rr + mvs->rra + mvs->rrb + mvs->rrr;
-	printf("after optimisation, total nb of moves is \033[37;44m%d\033[0m\n", mvs->total);//debug
+//	printf("after optimisation, total nb of moves is \033[37;44m%d\033[0m\n", mvs->total);//debug
 	return (mvs);
 }
 
@@ -37,6 +37,8 @@ static t_stack	*get_dest(t_stack *node, t_stack *stk)
 	t_stack	*cpy;
 	t_stack *save_cpy;
 	
+	printf("\033[4mabout to find the dest of node \033[1m#%d\033[0m in sa :\n", node->index);//debug
+	show_stack(stk);//debug
 	cpy = copy_stack(stk);
 	save_cpy = cpy;
 	while (!is_stack_sorted(cpy))
@@ -48,10 +50,20 @@ static t_stack	*get_dest(t_stack *node, t_stack *stk)
 			exit(0);//
 		}//debug
 	}
-	while (cpy->index < node->index && cpy->next)
-		cpy = cpy->next;
+	printf("\033[33mcpy sorted :\033[0m\n");//debug
+	show_stack(cpy);//debug
+	while (cpy->index < node->index && cpy->next){
+		cpy = cpy->next; 
+		printf("cpy is now #%d\n", cpy->index);//debug
+	}
+//PROBLEME ZONE : BEGIN=============================================PROBLEM ZONE
 	if (!cpy->next)
+	{
+		printf("\033[31m!cpy->next\033[0m\n");//debug
 		cpy = save_cpy;
+	}
+//PROBLEME ZONE : END===============================================PROBLEM ZONE
+	printf("dest for \033[1m#%d\033[0m is element \033[1m#%d\033[0m\n", node->index, cpy->index);//debug
 	while (cpy->index != stk->index)
 		stk = stk->next;
 	destroy_stack(cpy);
@@ -64,22 +76,22 @@ static t_moves	*count_moves(t_stack *node, t_stack *sa, t_stack *sb)
 	int		tmp;
 	t_stack	*dst;
 
-	printf("testing for element \033[1;33m#%d\033[0m\n", node->index);//debug
+//	printf("testing for element \033[1;33m#%d\033[0m\n", node->index);//debug
 	mvs = init_mvs();
 	tmp = nb_mvs_to_top(node, sb);
 	if (tmp > 0)
 		mvs->rb += tmp;
 	else
 		mvs->rrb += -tmp;
-	printf("nb mvs to put node on top of sb : \033[32m%d\033[0m\n", tmp);//debug
+//	printf("nb mvs to put node on top of sb : \033[32m%d\033[0m\n", tmp);//debug
 	dst = get_dest(node, sa);
-	printf("dest is element \033[1m#%d\033[0m\n", dst->index);//debug
+//	printf("dest is element \033[1m#%d\033[0m\n", dst->index);//debug
 	tmp = nb_mvs_to_top(dst, sa);
 	if (tmp > 0)
 		mvs->ra += tmp;
 	else
 		mvs->rra += -tmp;
-	printf("nb mvs to put dest on top of sa : \033[32m%d\033[0m\n", tmp);//debug
+//	printf("nb mvs to put dest on top of sa : \033[32m%d\033[0m\n", tmp);//debug
 	return (optimise_mv(mvs));
 }
 
@@ -89,7 +101,7 @@ static t_moves	*find_best_moves(t_stack *sa, t_stack *sb)
 	t_moves	*tmp_mvs;
 	t_moves	*true_mvs;
 
-	show_both_stack(sa, sb, "counting moves for situation :");
+//	show_both_stack(sa, sb, "counting moves for situation :");//debug
 	true_mvs = count_moves(sb, sa, sb);
 	curent = sb->next;
 	while (curent)
