@@ -91,7 +91,4 @@ debug: library
 generator:
 	${CC} ${CFLAGS} -o get_nbrs nb_generator/generator.c
 
-test: library ${TOBJS} ${OBJS}
-	${CC} ${CFLAGS} -g ${LIB} ${SRCS} ${TSRC} -o test
-
 .PHONY:		all clean fclean re debug bonus
