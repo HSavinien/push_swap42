@@ -45,7 +45,7 @@ SRCS	=	ft_isdigit.c \
 			ft_memdup.c \
 			get_next_line.c \
 			get_next_line_utils.c \
-			get_next_line_bonus.c \
+#			get_next_line_bonus.c \
 
 OBJS	= ${SRCS:.c=.o}
 
