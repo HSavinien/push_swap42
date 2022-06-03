@@ -6,11 +6,11 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 17:31:09 by tmongell          #+#    #+#             */
-/*   Updated: 2022/06/03 18:39:45 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/06/03 19:12:58 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 #include <stdio.h>
 
 int	show_stack(t_stack *stack)

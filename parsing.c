@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 18:37:17 by tmongell          #+#    #+#             */
-/*   Updated: 2022/06/03 19:08:40 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/06/03 20:24:36 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 void	check_value(char *content)
 {
-	int i;
+	int	i;
+
 	if (content[0] != '-' && content[0] != '+' && !ft_isdigit(content[0]))
 		error("parameter contain non-atoiable values");
 	i = 1;

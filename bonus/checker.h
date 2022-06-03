@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 07:07:06 by tmongell          #+#    #+#             */
-/*   Updated: 2022/06/03 18:39:19 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/06/03 19:47:03 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <limits.h>
 
 # include "../library/libft/libft.h"
-# include "../library/printf/lib_printf.h"
+# include "../library/printf/libftprintf.h"
 
 //structures    ==================================================    structures
 
