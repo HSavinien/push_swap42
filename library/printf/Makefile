@@ -5,7 +5,7 @@ SRCS		=	ft_printf.c \
 				ft_printptr.c \
 				ft_printnbr.c \
 				ft_printbase.c \
-				ft_strlen.c \
+				pf_strlen.c \
 
 OBJS		=	${SRCS:.c=.o}
 

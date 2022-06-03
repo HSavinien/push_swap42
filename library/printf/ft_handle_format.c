@@ -6,19 +6,16 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 19:44:43 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/03 14:27:26 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/06/03 19:40:04 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib_printf.h"
+#include "libftprintf.h"
 
 int	ft_handle_format(char form, va_list ap)
 {
 	if (form == '%')
-	{
-		write(1, "%", 1);
-		return (1);
-	}
+		return (write(1, "%", 1));
 	else if (form == 'c')
 		return (ft_printchar(va_arg(ap, int)));
 	else if (form == 's')

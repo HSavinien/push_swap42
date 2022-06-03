@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lib_printf.h                                       :+:      :+:    :+:   */
+/*   libftprintf.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/23 17:55:27 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/03 14:27:47 by tmongell         ###   ########.fr       */
+/*   Created: 2022/05/19 00:21:49 by tmongell          #+#    #+#             */
+/*   Updated: 2022/06/03 19:38:43 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIB_PRINTF_H
-# define LIB_PRINTF_H
+#ifndef LIBFTPRINTF_H
+# define LIBFTPRINTF_H
 # include <stdarg.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -27,5 +27,5 @@ int		ft_printptr(void *ptr);
 int		ft_printnbr(long int nb);
 int		ft_printbase(long unsigned int nb, char *base);
 //subfunction (used by the others)
-size_t	ft_strlen(const char *s);
+size_t	pf_strlen(const char *s);
 #endif

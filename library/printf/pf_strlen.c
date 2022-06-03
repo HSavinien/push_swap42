@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   pf_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/20 14:07:07 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/03 14:27:45 by tmongell         ###   ########.fr       */
+/*   Created: 2022/06/03 19:40:32 by tmongell          #+#    #+#             */
+/*   Updated: 2022/06/03 19:40:34 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib_printf.h"
+#include "libftprintf.h"
 
-size_t	ft_strlen(const char *s)
+size_t	pf_strlen(const char *s)
 {
 	int	i;
 

@@ -6,11 +6,11 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 16:53:48 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/03 14:27:30 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/06/03 19:40:06 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib_printf.h"
+#include "libftprintf.h"
 
 static void	ft_swap(int	*a, int *b)
 {
@@ -88,7 +88,7 @@ int	ft_printbase(long unsigned int nb, char *base)
 
 	if (!base || !*base || !base[1])
 		return (-10);
-	basesize = ft_strlen(base);
+	basesize = pf_strlen(base);
 	nblen = ft_nblen(nb, basesize);
 	digits = ft_get_digits(nb, basesize, nblen);
 	if (!digits)
