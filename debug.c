@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 17:31:09 by tmongell          #+#    #+#             */
-/*   Updated: 2022/06/02 15:26:23 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/06/03 16:50:32 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,21 +21,34 @@ int	show_stack(t_stack *stack)
 	while (stack)
 	{
 		if (stack->content)
-			printf("\033[1m%d\033[0m(%d) | ", stack->index, *stack->content);
+			ft_printf("\033[1m%d\033[0m(%d) | ", stack->index, *stack->content);
 		else
-			printf("(null) | ");
+			ft_printf("(null) | ");
 		stack = stack->next;
 		i ++;
 	}
-	printf("\n");
+	ft_printf("\n");
 	return (i);
 }
 
 void	show_both_stack(t_stack *sa, t_stack *sb, char *msg)
 {
-	printf("%s\n", msg);
-	printf("sa : ");
+	ft_printf("%s\n", msg);
+	ft_printf("sa : ");
 	show_stack(sa);
-	printf("sb : ");
+	ft_printf("sb : ");
 	show_stack(sb);
+}
+
+int	get_integrity_code(t_stack	*stk)
+{
+	int	integrity;
+
+	integrity = 0;
+	while(stk)
+	{
+		integrity += *(stk->content) * stk->index;
+		stk = stk->next;
+	}
+	return (integrity);
 }

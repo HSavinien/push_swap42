@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 20:02:12 by tmongell          #+#    #+#             */
-/*   Updated: 2022/06/03 15:53:46 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/06/03 17:38:05 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,4 +103,5 @@ void	sort_many(t_stack *sa, t_stack *sb)
 		mvs = find_best_moves(sa, sb);
 		do_moves(mvs, &sa, &sb);
 	}
+	do_final_rotate(&sa, &sb);
 }

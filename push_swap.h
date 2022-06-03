@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 16:53:06 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/30 18:47:20 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/06/03 16:52:40 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,7 @@ t_moves	*init_mvs(void);
 int		find_pos_in_stack(t_stack *element, t_stack *stk);
 void	do_moves(t_moves *mvs, t_stack **stk, t_stack **sb);
 int		nb_mvs_to_top(t_stack *node, t_stack *stk);
+void	do_final_rotate(t_stack **sa, t_stack **sb);
 
 //movements    ----------------------------------------------------    movements
 //subject functions
@@ -107,5 +108,6 @@ int		error(char *msg);
 
 int		show_stack(t_stack *stack);
 void	show_both_stack(t_stack *sa, t_stack *sb, char *msg);
+int		get_integrity_code(t_stack	*stk);
 
 #endif

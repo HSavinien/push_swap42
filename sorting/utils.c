@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 13:13:32 by tmongell          #+#    #+#             */
-/*   Updated: 2022/06/02 17:43:44 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/06/03 17:38:52 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ int	nb_mvs_to_top(t_stack *node, t_stack *stk)
 
 void	do_moves(t_moves *mvs, t_stack **sa, t_stack **sb)
 {
-//	show_both_stack(*sa, *sb, "about to push. for now, stack are :");//debug
 	while (mvs->ra -- > 0)
 		mv_ra(sa, sb);
 	while (mvs->rra -- > 0)
@@ -73,7 +72,26 @@ void	do_moves(t_moves *mvs, t_stack **sa, t_stack **sb)
 		mv_rr(sa, sb);
 	while (mvs->rrr -- > 0)
 		mv_rrr(sa, sb);
-//	printf("element to push is \033[1;32m%d\033[0m\n", (*sb)->index);//debug
 	mv_pa(sa, sb);
-//	show_both_stack(*sa, *sb, "new state :");//debug
+}
+
+void	do_final_rotate(t_stack **sa, t_stack **sb)
+{
+	t_stack	*top;
+	int		mvs;
+
+	top = *sa;
+	while (top->index != 1)
+		top = top->next;
+	mvs = nb_mvs_to_top(top, *sa);
+	if (mvs > 0)
+	{
+		while (mvs --)
+			mv_ra(sa, sb);
+	}
+	else
+	{
+		while (mvs ++)
+			mv_rra(sa, sb);
+	}
 }
