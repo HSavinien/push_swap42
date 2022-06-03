@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 22:20:16 by tmongell          #+#    #+#             */
-/*   Updated: 2022/06/03 18:46:03 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/06/03 21:24:12 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,5 @@ void	mv_rrr(t_stack **sa, t_stack **sb)
 {
 	do_rev_rotate(sa);
 	do_rev_rotate(sb);
-	ft_printf("rrr\n");
+	write(1, "rrr\n", 4);
 }

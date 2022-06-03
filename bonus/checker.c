@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 06:46:55 by tmongell          #+#    #+#             */
-/*   Updated: 2022/06/03 20:36:21 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/06/03 21:27:12 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	read_move(char	*line, t_stack **sa, t_stack **sb)
 {
-	if (!ft_strncmp(line, "sa\n", 10))
+	if (!ft_strncmp(line, "sa\n", 3))
 		mv_sa(sa, sb);
 	else if (!ft_strncmp(line, "sb\n", 3))
 		mv_sb(sa, sb);
@@ -30,16 +30,14 @@ void	read_move(char	*line, t_stack **sa, t_stack **sb)
 		mv_rra(sa, sb);
 	else if (!ft_strncmp(line, "rrb\n", 4))
 		mv_rrb(sa, sb);
-	else if (!ft_strncmp(line, "rrr\n", 3))
+	else if (!ft_strncmp(line, "rrr\n", 4))
 		mv_rrr(sa, sb);
 	else if (!ft_strncmp(line, "pa\n", 3))
 		mv_pa(sa, sb);
 	else if (!ft_strncmp(line, "pb\n", 3))
 		mv_pb(sa, sb);
-	else {
-	puts(line);//debug
+	else
 		exit(write(1, "error\n", 6));
-	}
 }
 
 void	do_checking(t_stack *sa, t_stack *sb)

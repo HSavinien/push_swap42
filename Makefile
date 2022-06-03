@@ -36,7 +36,7 @@ CC		=	gcc
 
 CFLAGS	=	-Wall -Wextra -Werror
 
-LIB		=	-L./library/printf -lftprintf -L./library/libft -lft
+LIB		=	-L./library/printf -lftprintf -L./library/libft -lft -L./library/get_next_line -lgnl -lreadline
 
 NAME	=	push_swap
 
@@ -50,7 +50,7 @@ ${NAME}: ${OBJS}	library
 	@${CC} ${CFLAGS} ${LIB} ${OBJS} -o ${NAME}
 	@echo "code compiled succesfully"
 
-library:	printf libft
+library:	printf libft gnl
 
 printf:
 	@make -s -C ./library/printf
@@ -60,16 +60,22 @@ libft:
 	@make -s -C ./library/libft
 	@echo "libft compiled"
 
+gnl:
+	@make -s -C ./library/get_next_line
+	@echo get_next_line compiled
+
 clean:
 	@rm -rf ${OBJS} ${NAME}.dSYM ${BOBJS} test
 	@make -s -C ./library/printf clean
 	@make -s -C ./library/libft clean
+	@make -s -C ./library/get_next_line clean
 	@echo "object files removed"
 
 fclean:		clean
 	@rm -f ${NAME} generator bonus/checker
 	@make -s -C ./library/printf fclean
 	@make -s -C ./library/libft fclean
+	@make -s -C ./library/get_next_line fclean
 	@echo "${NAME} file removed"
 
 re:		fclean all
