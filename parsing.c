@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 18:37:17 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/19 06:39:42 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/06/03 19:08:40 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,17 @@
 
 void	check_value(char *content)
 {
+	int i;
 	if (content[0] != '-' && content[0] != '+' && !ft_isdigit(content[0]))
 		error("parameter contain non-atoiable values");
+	i = 1;
+	while (content[i])
+	{
+		if (!ft_isdigit(content[i ++]))
+			error("parameters must be numbers only");
+	}
+	if ((content[0] == '+' || content[0] == '-') && !content[1])
+		error("after the unsigned int, the uninted sign? I don't think so...");
 }
 
 int	value_in_tab(int val, int *tab)
