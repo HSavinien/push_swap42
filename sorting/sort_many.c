@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 20:02:12 by tmongell          #+#    #+#             */
-/*   Updated: 2022/06/03 17:38:05 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/06/03 18:47:33 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,21 +34,20 @@ static t_moves	*optimise_mv(t_moves *mvs)
 static t_stack	*get_dest(t_stack *node, t_stack *stk)
 {
 	t_stack	*cpy;
-	t_stack *save_cpy;
-	
+	t_stack	*save_cpy;
+
 	cpy = copy_stack(stk);
 	while (!is_stack_sorted(cpy))
 		do_rotate(&cpy);
 	save_cpy = cpy;
-	while (cpy->index < node->index && cpy->next){
-		cpy = cpy->next; 
-	}
+	while (cpy->index < node->index && cpy->next)
+		cpy = cpy->next;
 	if (cpy->index < node->index)
 		cpy = save_cpy;
 	while (cpy->index != stk->index)
 		stk = stk->next;
 	destroy_stack(cpy);
-	return(stk);
+	return (stk);
 }
 
 static t_moves	*count_moves(t_stack *node, t_stack *sa, t_stack *sb)

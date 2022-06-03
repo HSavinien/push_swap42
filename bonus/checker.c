@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 06:46:55 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/19 16:52:37 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/06/03 18:38:57 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,27 @@
 
 void	read_move(char	*line, t_stack **sa, t_stack **sb)
 {
-	if(!ft_strncmp(line, "sa\n", 3))
+	if (!ft_strncmp(line, "sa\n", 3))
 		mv_sa(sa, sb);
-	else if(!ft_strncmp(line, "sb\n", 3))
+	else if (!ft_strncmp(line, "sb\n", 3))
 		mv_sb(sa, sb);
-	else if(!ft_strncmp(line, "ss\n", 3))
+	else if (!ft_strncmp(line, "ss\n", 3))
 		mv_ss(sa, sb);
-	else if(!ft_strncmp(line, "ra\n", 3))
+	else if (!ft_strncmp(line, "ra\n", 3))
 		mv_ra(sa, sb);
-	else if(!ft_strncmp(line, "rb\n", 3))
+	else if (!ft_strncmp(line, "rb\n", 3))
 		mv_rb(sa, sb);
-	else if(!ft_strncmp(line, "rr\n", 3))
+	else if (!ft_strncmp(line, "rr\n", 3))
 		mv_rr(sa, sb);
-	else if(!ft_strncmp(line, "rra\n", 4))
+	else if (!ft_strncmp(line, "rra\n", 4))
 		mv_rra(sa, sb);
-	else if(!ft_strncmp(line, "rrb\n", 4))
+	else if (!ft_strncmp(line, "rrb\n", 4))
 		mv_rrb(sa, sb);
-	else if(!ft_strncmp(line, "rrr\n", 4))
+	else if (!ft_strncmp(line, "rrr\n", 4))
 		mv_rrr(sa, sb);
-	else if(!ft_strncmp(line, "pa\n", 3))
+	else if (!ft_strncmp(line, "pa\n", 3))
 		mv_pa(sa, sb);
-	else if(!ft_strncmp(line, "pb\n", 3))
+	else if (!ft_strncmp(line, "pb\n", 3))
 		mv_pb(sa, sb);
 	else
 		exit(ft_printf("error\n"));
@@ -56,13 +56,14 @@ void	do_checking(t_stack *sa, t_stack *sb)
 	else
 		ft_printf("KO\n");
 }
+
 int	main(int ac, char **av)
 {
 	t_stack	*sa;
 	t_stack	*sb;
 
 	if (ac < 2)
-		return(0);
+		return (0);
 	sa = read_args(ac, av);
 	sb = NULL;
 	do_checking(sa, sb);

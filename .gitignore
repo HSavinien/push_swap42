@@ -14,3 +14,4 @@ checker_mac
 checker
 tests
 *.tar.gz
+pyviz.py

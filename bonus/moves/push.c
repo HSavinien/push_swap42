@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 20:54:43 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/19 11:28:08 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/06/03 18:42:51 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	do_push(t_stack **src, t_stack **dst)
 	t_stack	*save;
 
 	if (!*src)
-		return;
+		return ;
 	save = *src;
 	*src = (*src)->next;
 	save->next = *dst;

@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 07:07:06 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/19 10:46:23 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/06/03 18:39:19 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,5 +89,5 @@ int		error(char *msg);
 
 //debug    ------------------------------------------------------------    debug
 
-int	show_stack(t_stack *sack);
+int		show_stack(t_stack *sack);
 #endif

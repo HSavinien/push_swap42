@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/23 17:58:27 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/31 14:38:40 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/06/03 18:37:21 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,6 @@ t_stack	*copy_stack(t_stack *src)
 	}
 	last->content = src->content;
 	last->index = src->index;
-	last->next=NULL;
+	last->next = NULL;
 	return (cpy);
 }

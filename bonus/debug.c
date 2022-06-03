@@ -6,12 +6,12 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 17:31:09 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/19 09:47:32 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/06/03 18:39:45 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
-#include "stdio.h"
+#include "push_swap.h"
+#include <stdio.h>
 
 int	show_stack(t_stack *stack)
 {
@@ -21,65 +21,34 @@ int	show_stack(t_stack *stack)
 	while (stack)
 	{
 		if (stack->content)
-			printf("\033[1m%d\033[0m(%d) | ", *stack->content, stack->index);
+			ft_printf("\033[1m%d\033[0m(%d) | ", stack->index, *stack->content);
 		else
-			printf("(null) | ");
+			ft_printf("(null) | ");
 		stack = stack->next;
 		i ++;
 	}
-	printf("\n");
+	ft_printf("\n");
 	return (i);
 }
 
-void	test_push(t_stack *sa, t_stack *sb)
+void	show_both_stack(t_stack *sa, t_stack *sb, char *msg)
 {
-	mv_pb(&sa, &sb);
-	mv_pb(&sa, &sb);
+	ft_printf("%s\n", msg);
+	ft_printf("sa : ");
 	show_stack(sa);
-	show_stack(sb);
-	mv_pa(&sa, &sb);
-	show_stack(sa);
-	show_stack(sb);
-	mv_pa(&sa, &sb);
-	show_stack(sa);
+	ft_printf("sb : ");
 	show_stack(sb);
 }
 
-void	test_swap(t_stack *sa, t_stack *sb)
+int	get_integrity_code(t_stack	*stk)
 {
-	mv_sa(&sa, &sb);
-	mv_sb(&sa, &sb);
-	show_stack(sa);
-	show_stack(sb);
-	mv_ss(&sa, &sb);
-	show_stack(sa);
-	show_stack(sb);
-}
+	int	integrity;
 
-void	test_rotate(t_stack *sa, t_stack *sb)
-{
-	mv_ra(&sa, &sb);
-	show_stack(sa);
-	mv_rb(&sa, &sb);
-	show_stack(sb);
-	mv_rr(&sa, &sb);
-	show_stack(sa);
-	show_stack(sb);
-	mv_rra(&sa, &sb);
-	show_stack(sa);
-	mv_rrb(&sa, &sb);
-	show_stack(sb);
-	mv_rrr(&sa, &sb);
-	show_stack(sa);
-	show_stack(sb);
-}
-
-void	test_moves(t_stack *sa, t_stack *sb)
-{
-	printf("\033[1;4mtesting push function :\033[0m \n\n");
-	test_push(sa, sb);
-	printf("\033[1;4mtesting swap function :\033[0m \n\n");
-	test_swap(sa, sb);
-	printf("\033[1;4mtesting rotate function :\033[0m \n\n");
-	test_rotate(sa, sb);
+	integrity = 0;
+	while (stk)
+	{
+		integrity += *(stk->content) * stk->index;
+		stk = stk->next;
+	}
+	return (integrity);
 }

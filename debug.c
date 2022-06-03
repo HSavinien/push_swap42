@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 17:31:09 by tmongell          #+#    #+#             */
-/*   Updated: 2022/06/03 16:50:32 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/06/03 18:36:52 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	get_integrity_code(t_stack	*stk)
 	int	integrity;
 
 	integrity = 0;
-	while(stk)
+	while (stk)
 	{
 		integrity += *(stk->content) * stk->index;
 		stk = stk->next;

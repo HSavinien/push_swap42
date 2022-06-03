@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 22:20:16 by tmongell          #+#    #+#             */
-/*   Updated: 2022/06/03 17:34:35 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/06/03 18:46:03 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	do_rev_rotate(t_stack **src)
 	t_stack	*tmp;
 
 	if (!*src || !(*src)->next)
-		return;
+		return ;
 	tmp = stack_get_penultimate(*src);
 	tmp->next->next = *src;
 	*src = tmp->next;
