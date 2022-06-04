@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 07:07:06 by tmongell          #+#    #+#             */
-/*   Updated: 2022/06/03 21:15:18 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/06/04 20:30:27 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,15 +50,17 @@ typedef struct s_moves {
 
 //parsing    --------------------------------------------------------    parsing
 
-t_stack	*read_args(int ac, char **av);
+t_stack	*read_args(int ac, int base_ac, char **av);
 void	check_value(char *content);
 int		value_in_tab(int val, int *tab);
 void	give_index(t_stack *stk);
+t_stack	*stupid_norm_free(int *seen, t_stack *stk);
 
 //utils    ------------------------------------------------------------    utils
 //general
 void	ft_swap(int *a, int *b);
 void	ft_swap_ptr(void **a, void **b);
+void	free_dbl_ptr(void	**tab);
 //stack
 t_stack	*stack_add_front(t_stack *stack, int *content);
 size_t	get_stack_len(t_stack *s);

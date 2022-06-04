@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 21:01:58 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/19 08:46:32 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/06/04 20:27:32 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,14 @@ void	ft_swap_ptr(void **a, void **b)
 	c = *a;
 	*a = *b;
 	*b = c;
+}
+
+void	free_dbl_ptr(void	**tab)
+{
+	int	i;
+
+	i = 0;
+	while (tab[i])
+		free(tab[i ++]);
+	free(tab);
 }

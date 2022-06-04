@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 06:46:55 by tmongell          #+#    #+#             */
-/*   Updated: 2022/06/03 21:27:12 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/06/04 20:31:36 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,8 @@ int	main(int ac, char **av)
 
 	if (ac < 2)
 		return (0);
-	sa = read_args(ac, av);
+	sa = read_args(ac, ac, av);
 	sb = NULL;
 	do_checking(sa, sb);
+	system("leaks checker");//debug
 }

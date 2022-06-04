@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 19:31:31 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/19 08:46:41 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/06/04 20:29:38 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,11 @@ void	give_index(t_stack *stk)
 		curent->index = index;
 		index ++;
 	}
+}
+
+//a stupid function, necessary to respect the norm...
+t_stack	*stupid_norm_free(int *seen, t_stack *stk)
+{
+	free(seen);
+	return (stk);
 }
