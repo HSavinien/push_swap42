@@ -6,14 +6,13 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 16:53:06 by tmongell          #+#    #+#             */
-/*   Updated: 2022/06/04 20:23:11 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/06/04 20:34:34 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 # include <stdlib.h>
-# include <stdio.h>//===========================================================DEBUG
 # include <limits.h>
 
 # include "library/libft/libft.h"
