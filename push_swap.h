@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 16:53:06 by tmongell          #+#    #+#             */
-/*   Updated: 2022/06/03 19:46:50 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/06/04 19:01:24 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ void	give_index(t_stack *stk);
 //general
 void	ft_swap(int *a, int *b);
 void	ft_swap_ptr(void **a, void **b);
+void	free_dbl_ptr(void	**tab);
 //stack
 t_stack	*stack_add_front(t_stack *stack, int *content);
 size_t	get_stack_len(t_stack *s);
