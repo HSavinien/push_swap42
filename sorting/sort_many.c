@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 20:02:12 by tmongell          #+#    #+#             */
-/*   Updated: 2022/06/03 18:47:33 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/06/04 20:23:31 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static t_stack	*get_dest(t_stack *node, t_stack *stk)
 		cpy = save_cpy;
 	while (cpy->index != stk->index)
 		stk = stk->next;
-	destroy_stack(cpy);
+	destroy_stack(save_cpy);
 	return (stk);
 }
 
@@ -101,6 +101,9 @@ void	sort_many(t_stack *sa, t_stack *sb)
 	{
 		mvs = find_best_moves(sa, sb);
 		do_moves(mvs, &sa, &sb);
+		free(mvs);
 	}
 	do_final_rotate(&sa, &sb);
+	destroy_main_stack(sa);
+	//destroy_stack(sb);
 }

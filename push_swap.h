@@ -6,14 +6,14 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 16:53:06 by tmongell          #+#    #+#             */
-/*   Updated: 2022/06/04 19:01:24 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/06/04 20:23:11 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 # include <stdlib.h>
-# include <stdio.h>//======================================================DEBUG
+# include <stdio.h>//===========================================================DEBUG
 # include <limits.h>
 
 # include "library/libft/libft.h"
@@ -49,10 +49,11 @@ typedef struct s_moves {
 
 //parsing    --------------------------------------------------------    parsing
 
-t_stack	*read_args(int ac, char **av);
+t_stack	*read_args(int ac, int base_ac, char **av);
 void	check_value(char *content);
 int		value_in_tab(int val, int *tab);
 void	give_index(t_stack *stk);
+t_stack	*stupid_norm_free(int *seen, t_stack *stk);
 
 //utils    ------------------------------------------------------------    utils
 //general
@@ -65,6 +66,7 @@ size_t	get_stack_len(t_stack *s);
 int		is_stack_sorted(t_stack *stack);
 t_stack	*stack_find_last(t_stack *s);
 void	destroy_stack(t_stack *stk);
+void	destroy_main_stack(t_stack *stk);
 t_stack	*copy_stack(t_stack *src);
 
 //sorting    --------------------------------------------------------    sorting

@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 21:01:58 by tmongell          #+#    #+#             */
-/*   Updated: 2022/06/04 18:57:40 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/06/04 20:00:44 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,6 @@ void	free_dbl_ptr(void	**tab)
 
 	i = 0;
 	while (tab[i])
-		free(tab[i]);
+		free(tab[i ++]);
 	free(tab);
 }
