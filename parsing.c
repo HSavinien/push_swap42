@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 18:37:17 by tmongell          #+#    #+#             */
-/*   Updated: 2022/06/03 20:24:36 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/06/04 18:54:31 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,8 +92,7 @@ t_stack	*read_args(int ac, char **av)
 	element = NULL;
 	seen = malloc(sizeof(int) * ac);
 	ft_bzero(seen, ac * sizeof (int));
-	ac --;
-	while (ac >= 0)
+	while (-- ac >= 0)
 	{
 		check_value(av[ac]);
 		if (value_in_tab(ft_atoi(av[ac]), seen))
@@ -105,7 +104,6 @@ t_stack	*read_args(int ac, char **av)
 			error("unplaned malloc error");
 		*new_val = ft_atoi(av[ac]);
 		element = stack_add_front(element, new_val);
-		ac --;
 	}
 	give_index(element);
 	return (element);
