@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 19:31:20 by tmongell          #+#    #+#             */
-/*   Updated: 2022/06/04 19:58:02 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/06/08 17:12:24 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ void	do_sorting(t_stack *sa, t_stack *sb)
 		ft_printf("sa\n");
 	else if (len == 3)
 		sort_three(sa, sb);
-	else if (len <= 5)
-		sort_five(sa, sb);
 	else
 		sort_many(sa, sb);
 }

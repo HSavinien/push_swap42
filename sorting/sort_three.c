@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/29 17:24:01 by tmongell          #+#    #+#             */
-/*   Updated: 2022/05/10 16:07:41 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/06/08 17:14:41 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,7 @@ t_stack	*sort_three(t_stack *sa, t_stack *sb)
 		mv_ra(&sa, &sb);
 		mv_sa(&sa, &sb);
 	}
+	if (!sb)
+		destroy_main_stack(sa);
 	return (sa);
 }
