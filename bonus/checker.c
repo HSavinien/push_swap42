@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 06:46:55 by tmongell          #+#    #+#             */
-/*   Updated: 2022/06/04 20:33:54 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/06/08 17:39:29 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ void	do_checking(t_stack *sa, t_stack *sb)
 		ft_printf("OK\n");
 	else
 		ft_printf("KO\n");
+	destroy_main_stack(sa);
+	destroy_main_stack(sb);
 }
 
 int	main(int ac, char **av)

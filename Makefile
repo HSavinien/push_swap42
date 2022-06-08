@@ -21,6 +21,7 @@ BSRCS	=	bonus/checker.c \
 			bonus/parsing.c \
 			bonus/parsing_index.c \
 			bonus/stack_utils.c \
+			bonus/stack_utils2.c \
 			bonus/debug.c \
 			bonus/moves/push.c \
 			bonus/moves/swap.c \
@@ -71,7 +72,7 @@ clean:
 	@echo "object files removed"
 
 fclean:		clean
-	@rm -f ${NAME} generator bonus/checker
+	@rm -f ${NAME} generator bonus/checker checker
 	@make -s -C ./library/printf fclean
 	@make -s -C ./library/libft fclean
 	@make -s -C ./library/get_next_line fclean

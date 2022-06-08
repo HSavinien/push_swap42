@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 07:07:06 by tmongell          #+#    #+#             */
-/*   Updated: 2022/06/04 20:30:27 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/06/08 17:38:17 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,6 @@ typedef struct s_stack {
 	int				index;
 	struct s_stack	*next;
 }	t_stack;
-
-typedef struct s_lis {
-	int		len;
-	int		pos_num;
-	int		first_index;
-	int		last_index;
-	t_stack	*pos;
-}	t_lis;
 
 typedef struct s_moves {
 	int	ra;
@@ -66,6 +58,8 @@ t_stack	*stack_add_front(t_stack *stack, int *content);
 size_t	get_stack_len(t_stack *s);
 int		is_stack_sorted(t_stack *stack);
 t_stack	*stack_find_last(t_stack *s);
+void	destroy_stack(t_stack *stk);
+void	destroy_main_stack(t_stack *stk);
 
 //movements    ----------------------------------------------------    movements
 //subject functions
