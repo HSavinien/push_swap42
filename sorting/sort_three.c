@@ -6,11 +6,19 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/29 17:24:01 by tmongell          #+#    #+#             */
-/*   Updated: 2022/06/08 17:14:41 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/06/08 18:18:37 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+t_stack	*norm_free(t_stack *sa, t_stack *sb)
+{
+	if (sb)
+		return (sa);
+	destroy_main_stack(sa);
+	return (NULL);
+}
 
 t_stack	*sort_three(t_stack *sa, t_stack *sb)
 {
@@ -37,7 +45,5 @@ t_stack	*sort_three(t_stack *sa, t_stack *sb)
 		mv_ra(&sa, &sb);
 		mv_sa(&sa, &sb);
 	}
-	if (!sb)
-		destroy_main_stack(sa);
-	return (sa);
+	return (norm_free(sa, sb));
 }
