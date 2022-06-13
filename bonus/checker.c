@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 06:46:55 by tmongell          #+#    #+#             */
-/*   Updated: 2022/06/08 17:39:29 by tmongell         ###   ########.fr       */
+/*   Updated: 2022/06/13 19:15:53 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	do_checking(t_stack *sa, t_stack *sb)
 		free(line);
 		line = get_next_line(0);
 	}
-	if (is_stack_sorted(sa))
+	if (is_stack_sorted(sa) && !sb)
 		ft_printf("OK\n");
 	else
 		ft_printf("KO\n");
