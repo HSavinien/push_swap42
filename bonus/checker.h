@@ -6,7 +6,7 @@
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 07:07:06 by tmongell          #+#    #+#             */
-/*   Updated: 2022/06/08 17:38:17 by tmongell         ###   ########.fr       */
+/*   Updated: 2023/05/09 22:51:14 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 
 # include "../library/libft/libft.h"
 # include "../library/printf/libftprintf.h"
-# include "../library/get_next_line/get_next_line.h"
 
 //structures    ==================================================    structures
 

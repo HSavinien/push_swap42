@@ -1,20 +1,15 @@
-SRCS	=	debug.c \
+SRCS	=	checker.c \
+			debug.c \
 			exit.c \
 			general_utils.c \
-			parsing.c \
-			parsing_index.c \
-			push_swap.c \
-			stack_utils.c \
-			stack_utils2.c \
 			moves/push.c \
 			moves/rev_rotate.c \
 			moves/rotate.c \
 			moves/swap.c \
-			sorting/do_sorting.c \
-			sorting/sort_many.c \
-			sorting/sort_three.c \
-			sorting/utils.c \
-
+			parsing.c \
+			parsing_index.c \
+			stack_utils.c \
+			stack_utils2.c \
 
 
 OBJS	=	${SRCS:%.c=%.o}
@@ -25,9 +20,9 @@ CC		=	gcc
 
 CFLAGS	=	-Wall -Wextra -Werror -Ilibrary -I./
 
-LIB		=	-L./library/libft -lft -L./library/printf -lftprintf
+LIB		=	-L../library/libft -lft -L ../library/printf -lftprintf
 
-NAME	=	push_swap
+NAME	=	../checker
 
 #rules    -------------------------------------------------------------    rules
 
@@ -59,39 +54,34 @@ ${NAME}: ${OBJS}
 	@echo "\033[1;32mcode compiled succesfully\033[0m ✅"
 
 clean:
-	@make -s -C ./library/libft clean
+	@make -s -C ../library/libft clean
 	@echo "\033[1;31mlibft cleaned\033[0m"
-	@make -s -C ./library/printf clean
+	@make -s -C ../library/printf clean
 	@echo "\033[1;31mprintf cleaned\033[0m"
-	@make -s -C ./bonus clean
 	@rm -rf ${OBJS} ${NAME}.dSYM ${BOBJS} test .loading_bar
 	@echo "\033[1;31mobject files removed\033[0m"
 
 fclean:		clean
-	@make -s -C ./library/libft fclean
+	@make -s -C ../library/libft fclean
 	@echo "\033[1;33mlibft.a file removed\033[0m"
-	@make -s -C ./library/printf fclean
+	@make -s -C ../library/printf fclean
 	@echo "\033[1;33mlibftprintf.a file removed\033[0m"
-	@make -s -C ./bonus fclean
 	@rm -f ${NAME}
 	@echo "\033[1;33m${NAME} file removed\033[0m"
 
 re:		fclean all
-
-bonus:
-	@make -s -C ./bonus
 
 #library rules
 library:	libft printf
 
 libft:
 	@echo "\033[94mcompiling libft :\033[0m"
-	@make -s -C ./library/libft
+	@make -s -C ../library/libft
 	@echo "\033[1;33mlibft compiled\033[0m\n"
 
 printf:
 	@echo "\033[94mcompiling printf :\033[0m"
-	@make -s -C ./library/printf
+	@make -s -C ../library/printf
 	@echo "\033[1;33mprintf compiled\033[0m\n"
 
 #debug rules

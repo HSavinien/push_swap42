@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isspace.c                                       :+:      :+:    :+:   */
+/*   ft_min_max.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/02 16:23:55 by tmongell          #+#    #+#             */
-/*   Updated: 2022/10/25 19:25:37 by tmongell         ###   ########.fr       */
+/*   Created: 2022/11/03 18:34:10 by tmongell          #+#    #+#             */
+/*   Updated: 2022/11/03 18:44:32 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isspace(int c)
+int	ft_min(int nbo, int nbt)
 {
-	return (c == ' '
-		|| c == '\t'
-		|| c == '\n'
-		|| c == '\v'
-		|| c == '\f'
-		|| c == '\r'
-		|| c == '\0');
+	if (nbo > nbt)
+		return (nbt);
+	return (nbo);
+}
+
+int	ft_max(int nbo, int nbt)
+{
+	if (nbo > nbt)
+		return (nbo);
+	return (nbt);
 }

@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isspace.c                                       :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tmongell <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: cmaroude <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/02 16:23:55 by tmongell          #+#    #+#             */
-/*   Updated: 2022/10/25 19:25:37 by tmongell         ###   ########.fr       */
+/*   Created: 2022/05/07 12:18:23 by cmaroude          #+#    #+#             */
+/*   Updated: 2022/11/03 19:00:06 by tmongell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isspace(int c)
+int	ft_strcmp(const char *s1, const char *s2)
 {
-	return (c == ' '
-		|| c == '\t'
-		|| c == '\n'
-		|| c == '\v'
-		|| c == '\f'
-		|| c == '\r'
-		|| c == '\0');
+	return (ft_strncmp(s1, s2, ft_min(ft_strlen(s1), ft_strlen(s2)) + 1));
 }
